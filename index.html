@@ -14,21 +14,57 @@
     <title>sarasjodin.com | Poem Generator</title>
   </head>
   <body>
-    <ul>
-      <li>
-        <input type="radio" id="option1" name="option" value="option1" />
-        <label for="option1">Option 1</label>
-      </li>
-      <li>
-        <input type="radio" id="option2" name="option" value="option2" />
-        <label for="option2">Option 2</label>
-      </li>
-      <li>
-        <input type="radio" id="option3" name="option" value="option3" />
-        <label for="option3">Option 3</label>
-      </li>
-    </ul>
+    <header>
+      <h1>AI poem generator</h1>
+    </header>
+    <main>
+      <form action="">
+        <fieldset>
+          <legend>1. Choose the style of the poem</legend>
 
+          <div>
+            <input
+              type="radio"
+              id="random"
+              name="random"
+              value="random"
+              checked
+            />
+            <label for="random">Random</label>
+          </div>
+
+          <input
+            type="radio"
+            id="option1"
+            name="option"
+            value="option1"
+            autofocus
+            required
+          />
+          <label for="option1">Option 1</label>
+
+          <input type="radio" id="option2" name="option" value="option2" />
+          <label for="option2">Option 2</label>
+
+          <input type="radio" id="option3" name="option" value="option3" />
+          <label for="option3">Option 3</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. Choose the topic of the poem</legend>
+          <input
+            id="poem-topic-box"
+            type="text"
+            placeholder="Enter the topic of the poem"
+            required
+          />
+        </fieldset>
+        <fieldset>
+          <legend>3. Submit your poem request</legend>
+        </fieldset>
+        <input type="submit" id="submit-button"/>
+      </form>
+      <div class="generated-poem">The Poem will be visible here</div>
+    </main>
     <footer>
       <div class="mini">
         <span class="split"
@@ -58,7 +94,7 @@
             class="darkbg mini"
             href="https://saras-portfolio.netlify.app"
             title="Visit my Programming portfolio page"
-            >Programming porfolio page.</a
+            >Programming portfolio page.</a
           ></span
         >
       </div>
