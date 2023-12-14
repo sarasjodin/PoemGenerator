@@ -15,8 +15,13 @@ footer {
   padding-top: 5%;
 }
 
+label {
+  padding-right: 15px;
+}
+
 #poem-topic-box {
-  width: 25%;
+  min-width: 25%;
+  max-width: 50%;
 }
 
 #submit-button {
