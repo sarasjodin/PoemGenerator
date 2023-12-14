@@ -1,0 +1,16 @@
+/* Style the radio buttons as a bullet list */
+ul {
+    list-style-type: disc;
+  }
+
+  /* Hide the default radio button appearance */
+  input[type="radio"] {
+    display: none;
+  }
+
+  /* Show the bullet point when the radio button is checked */
+  input[type="radio"]:checked + label::before {
+    content: "\25CF";
+    font-size: 20px;
+    color: black;
+  }
