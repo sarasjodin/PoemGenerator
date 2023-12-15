@@ -1,5 +1,13 @@
 body {
   text-align: center;
+  background-image: linear-gradient(
+    to right,
+    #9dc0ef,
+    white,
+    white,
+    white,
+    #9dc0ef
+  );
 }
 
 header {
@@ -8,6 +16,7 @@ header {
 
 h1 {
   color: darkblue;
+  margin-bottom: 0;
 }
 
 legend {
@@ -23,6 +32,27 @@ label {
   padding-right: 15px;
 }
 
+button, #submit-button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #cce2fd,  #83cefd);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  opacity: 1;
+  text-shadow: 0 0.1em 0.3em rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+button:hover, #submit-button:hover  {
+  transform: scale(1.05);
+}
+
 #poem-topic-box {
   min-width: 25%;
   max-width: 50%;
@@ -31,3 +61,11 @@ label {
 #submit-button {
   margin: 30px 0;
 }
+
+#typewriter {
+  line-height: 40px;
+  height: 42px;
+  color: darkblue;
+}
+
+

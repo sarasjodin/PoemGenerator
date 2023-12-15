@@ -1,3 +1,36 @@
+// Generator type writing
+let heading = document.querySelector("#typewriter");
+let text = "generator";
+let speed = 120;
+let delay = 3000;
+let pause = 500;
+let index = 0;
+function typeNextChar() {
+  // If the index is less than the text length, type the next character
+  if (index < text.length) {
+    // Append the next character to the h1 element
+    heading.innerHTML += text.charAt(index);
+
+    // Increment the index
+    index++;
+
+    // Set a timer to call this function again after the speed delay
+    setTimeout(typeNextChar, speed);
+  } else {
+    // Set a timer to clear the h1 element after the delay
+    setTimeout(function () {
+      heading.innerHTML = "";
+      // Set another timer to call this function again after the pause
+      setTimeout(typeNextChar, pause);
+    }, delay);
+
+    // Reset the index
+    index = 0;
+  }
+}
+
+typeNextChar();
+
 // Get the input element
 var input = document.getElementById("poem-topic-box");
 
