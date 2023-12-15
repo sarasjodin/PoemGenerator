@@ -22,13 +22,35 @@
       />
       <p>Let me present myself!<br />I'm Sara, your</p>
       <h1>AI Poem</h1>
-      <h2 id="typewriter"></h2>
+      <h2 class="typewriter" id="typewriter-title"></h2>
     </header>
     <main>
       <form id="poem-generator-form" action="">
         <fieldset>
           <legend>1. Choose style</legend>
-
+          <div>
+            <input
+              class="radiobuttons"
+              type="radio"
+              id="option11"
+              name="option"
+              value="Christmas gift poem with rhyme"
+              required
+              checked
+            />
+            <label for="option11" title=""
+              >Christmas gift poem with rhyme</label
+            >
+            <input
+              class="radiobuttons"
+              type="radio"
+              id="option12"
+              name="option"
+              value="Gift poem with rhyme"
+              required
+            />
+            <label for="option12" title="">Gift poem with rhyme</label>
+          </div>
           <div>
             <input
               class="radiobuttons"
@@ -36,11 +58,10 @@
               id="option1"
               name="option"
               value="random"
-              checked
             />
             <label
               for="option1"
-              title="This option will generate a randomly generated poem type (out of the 9 types mentioned in this section)"
+              title="This option will generate a randomly generated poem type (out of the 11 types mentioned in this section)"
               >Random</label
             >
             <input
@@ -172,21 +193,20 @@
         </fieldset>
         <fieldset>
           <legend>2. Choose topic</legend>
-          <p class="instructions">You'll get at better result if you:</p>
+          <p class="instructions">Get a better result by:</p>
           <ul>
-            <li>are kind to me</li>
-            <li>give a lot of specific information</li>
-            <li>don't repeat yourself</li>
+            <li>being kind to me</li>
+            <li>giving a lot of specific information</li>
+            <li>not repeating yourself</li>
           </ul>
           <textarea
             id="poem-topic-box"
             type="text"
-            placeholder="Enter the topic of your poem here"
+            placeholder="Enter input about your poem"
             required
             autocomplete="off"
             autofocus
-            oninput="adjustWidth()"
-            cols="25%"
+            cols="50%"
             rows="3"
           ></textarea>
         </fieldset>
@@ -194,7 +214,7 @@
           <legend>3. Submit your poem request</legend>
           <input type="submit" id="submit-button" />
         </fieldset>
-        <div id="poem" class="generated-poem"></div>
+        <div class="typewriter generated-poem" id="typewriter-poem"></div>
       </form>
       <button>Create another poem</button>
     </main>
