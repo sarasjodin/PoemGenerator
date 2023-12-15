@@ -17,7 +17,7 @@ header {
 h1 {
   color: #45a2ff;
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 legend {
@@ -125,8 +125,7 @@ button:hover,
   height: 42px;
   color: #45a2ff;
   font-size: 2.5rem;
-  font-weight: 700;
-
+  font-weight: 600;
 }
 
 input[type="radio"] {
