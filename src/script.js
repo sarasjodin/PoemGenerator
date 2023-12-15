@@ -31,14 +31,31 @@ function typeNextChar() {
 
 typeNextChar();
 
+// Function to display the poem
+function displayPoem(response) {
+  
+  let poemContainer = document.querySelector("#poem-container");
+  let createAnotherPoemButton = document.querySelector("#create-another-poem-button");
+
+  // Show the generated poem
+  poemContainer.innerHTML = response.data.answer;
+
+  // Hide the form
+  document.querySelector("#poem-generator-form").style.display = "none";
+
+  // Show the poem container and the "Create another poem" button
+  poemContainer.style.display = "block";
+  createAnotherPoemButton.style.display = "inline-block";
+}
+
 // Create the js for the form
 
-function generatePoem(event) {
+/* function generatePoem(event) {
   event.preventDefault();
 
   let poemContainer = document.querySelector("#poem");
   poemFormElement.innerHTML = "Text, text";
-}
+} */
 
 let poemFormElement = document.querySelector("#poem-generator-form");
 poemFormElement.defaultValue =
@@ -98,18 +115,6 @@ poemFormElement.addEventListener("submit", function (event) {
   }
 });
 
-// Define a function to adjust the input width
-/* function adjustWidth() {
- */ // Get the input value
-/*   let value = input.value;
- */
-// Get the number of characters in the input value
-/*   let length = value.length;
- */
-// Set the input width to 10 pixels times the number of characters
-/*   input.style.width = 5 * length + "px";
-}
- */
 // Create an array of poem types
 let poemTypes = [
   "Christmas gift poem that rhyme",
@@ -131,13 +136,21 @@ let randomIndex = Math.floor(Math.random() * poemTypes.length);
 
 // Access the corresponding element from the array
 let randomPoemType = poemTypes[randomIndex];
+function generatePoem(event) {
+  event.preventDefault();
+   // Hide the form after clicking "Submit"
+   document.querySelector("#poem-generator-form").style.display = "none";
 
-// Store the URL of the API endpoint
-let url = "https://www.poem-generator.org.uk/api/";
+  // Store the URL of the API endpoint
+  let prompt = "Write a short, 2-row Swedish poem about friendship";
+  let context = "It should speak about Sara and Hellen. Create a title between <h3></h3> tags. Every row should be placed between <p></p> tags.";
+  let apiKey = "7166fo94tf124f43f80bab7387ed0a26";
 
-// Store the parameters of the API request
-let params = { type: randomPoemType, keywords: "some keywords" };
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  // Store the parameters of the API request
+  axios.get(apiUrl).then(displayPoem);
+}
 /* Define an async function
 async function makePostRequest() {
   try {
