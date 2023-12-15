@@ -43,7 +43,7 @@ function adjustWidth() {
   var length = value.length;
 
   // Set the input width to 10 pixels times the number of characters
-  input.style.width = 10 * length + "px";
+  input.style.width = 5 * length + "px";
 }
 
 // Create an array of poem types

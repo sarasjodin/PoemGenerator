@@ -3,25 +3,27 @@ body {
   background-image: linear-gradient(
     to right,
     #9dc0ef,
-    white,
-    white,
-    white,
+    #cfdff4,
+    #ffffff,
+    #cfdff4,
     #9dc0ef
   );
 }
 
 header {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 h1 {
-  color: darkblue;
+  color: #45a2ff;
   margin-bottom: 0;
 }
 
 legend {
-  color: darkgray;
+  color: #62b1ff;
+  text-shadow: 0 0.1em 2em rgba(255, 255, 255, 0.9);
   padding: 30px 0 5px 0;
+  font-weight: 600;
 }
 
 footer {
@@ -32,30 +34,85 @@ label {
   padding-right: 15px;
 }
 
-button, #submit-button {
+ul {
+  width: 300px; /* adjust this value as you like */
+  margin: auto;
+  width: 250px;
+  text-align: left;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.generated-poem {
+  font-size: 16px;
+  padding: 20px;
+  line-height: 2;
+  border-radius: 10px; 
+  width: 50%;
+
+  width: 40%; /* adjust this value as you like */
+  margin: auto;
+  background-color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+button,
+#submit-button {
   display: inline-block;
   padding: 10px 15px;
   margin: 20px;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(to right, #cce2fd,  #83cefd);
+  background: linear-gradient(to right, #7bbbfa, #45a2ff);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
   opacity: 1;
-  text-shadow: 0 0.1em 0.3em rgba(0,0,0,0.5);
+  text-shadow: 0 0.1em 0.3em rgba(3, 127, 252, 0.8);
   cursor: pointer;
 }
 
-button:hover, #submit-button:hover  {
+button:hover,
+#submit-button:hover {
   transform: scale(1.05);
+}
+
+.instructions {
+  font-size: 1rem;
+  margin-bottom: 2px;
 }
 
 #poem-topic-box {
   min-width: 25%;
   max-width: 50%;
+}
+
+#poem-topic-box::placeholder {
+  /* for Chrome, Opera, and Safari */
+  text-align: center;
+  line-height: 3;
+}
+
+#poem-topic-box:-moz-placeholder {
+  /* for Firefox 18- */
+  text-align: center;
+  line-height: 3;
+}
+
+#poem-topic-box::-moz-placeholder {
+  /* for Firefox 19+ */
+  text-align: center;
+  line-height: 3;
+}
+
+#poem-topic-box:-ms-input-placeholder {
+  /* for Internet Explorer */
+  text-align: center;
+  line-height: 3;
 }
 
 #submit-button {
@@ -65,7 +122,33 @@ button:hover, #submit-button:hover  {
 #typewriter {
   line-height: 40px;
   height: 42px;
-  color: darkblue;
+  color: #45a2ff;
+  font-size: 2.5rem;
 }
 
+input[type="radio"] {
+  /* The native appearance is hidden */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
 
+input[type="radio"]::before {
+  /* A pseudo-element is created before the radio button */
+  content: "";
+  /* The pseudo-element has a circular shape */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  /* The pseudo-element has a background color and a border color */
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #9dc0ef;
+}
+
+input[type="radio"]:checked::before {
+  /* When the radio button is checked, the background color and the border color are changed */
+  background-color: rgb(77, 146, 237);
+  border-color: #9dc0ef;
+}

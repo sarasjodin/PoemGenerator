@@ -17,7 +17,7 @@
     <header>
       <img
         src="src/images/logo_chatbot_sara-01.svg"
-        width="150px"
+        width="130px"
         alt="A bot named Sara"
       />
       <p>Let me present myself!<br />I'm Sara, your</p>
@@ -27,10 +27,11 @@
     <main>
       <form action="">
         <fieldset>
-          <legend>1. Choose the style of the poem</legend>
+          <legend>1. Choose style</legend>
 
           <div>
             <input
+              class="radiobuttons"
               type="radio"
               id="option1"
               name="option"
@@ -43,6 +44,7 @@
               >Random</label
             >
             <input
+              class="radiobuttons"
               type="radio"
               id="option2"
               name="option"
@@ -55,6 +57,7 @@
               >Sonnet</label
             >
             <input
+              class="radiobuttons"
               type="radio"
               id="option3"
               name="option"
@@ -68,6 +71,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option4"
               name="option"
@@ -81,6 +85,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option5"
               name="option"
@@ -95,6 +100,7 @@
           </div>
           <div>
             <input
+              class="radiobuttons"
               type="radio"
               id="option6"
               name="option"
@@ -108,6 +114,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option7"
               name="option"
@@ -121,6 +128,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option8"
               name="option"
@@ -134,6 +142,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option9"
               name="option"
@@ -147,6 +156,7 @@
             >
 
             <input
+              class="radiobuttons"
               type="radio"
               id="option10"
               name="option"
@@ -161,11 +171,17 @@
           </div>
         </fieldset>
         <fieldset>
-          <legend>2. Choose the topic of the poem</legend>
+          <legend>2. Choose topic</legend>
+          <p class="instructions">You'll get at better result if you:</p>
+          <ul>
+            <li>are kind to me</li>
+            <li>give a lot of specific information</li>
+            <li>don't repeat yourself</li>
+          </ul>
           <textarea
             id="poem-topic-box"
             type="text"
-            placeholder="Enter the topic of the poem here"
+            placeholder="Enter the topic of your poem here"
             required
             autocomplete="off"
             autofocus
