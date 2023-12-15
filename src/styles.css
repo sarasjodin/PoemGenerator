@@ -20,10 +20,14 @@ h1 {
   font-weight: 600;
 }
 
+h2 {
+  margin-bottom: 20px;
+}
+
 legend {
   color: #62b1ff;
   text-shadow: 0 0.1em 2em rgba(255, 255, 255, 0.9);
-  padding: 30px 0 5px 0;
+  padding: 15px 0 0 0;
   font-weight: 600;
 }
 
@@ -45,14 +49,13 @@ ul {
   line-height: 1.8;
 }
 
-.generated-poem {
-
-  padding: 20px;
+#poem-generator-form {
+  padding: 0 20px;
   line-height: 2;
   border-radius: 10px;
   width: 40%;
   margin: 15px auto;
-  background-color: white;
+  background-color: rgbA(255, 255, 255, 0.4);
   text-align: center;
   font-size: 0.9rem;
 }
@@ -60,8 +63,8 @@ ul {
 button,
 #submit-button {
   display: inline-block;
-  padding: 10px 15px;
-  margin: 20px;
+  padding: 0 10px 5px 10px;
+  margin: 0 0 10px 0;
   border: none;
   border-radius: 5px;
   font-size: 1.1rem;
@@ -73,6 +76,11 @@ button,
   opacity: 1;
   text-shadow: 0 0.1em 0.3em rgba(3, 127, 252, 0.8);
   cursor: pointer;
+  margin: 10px 0 30px 0;
+}
+
+#create-another-poem-button {
+  display: none;
 }
 
 button:hover,
@@ -87,35 +95,28 @@ button:hover,
 
 #poem-topic-box {
   min-width: 25%;
-  max-width: 50%;
+  max-width: 100%;
+  line-height: normal;
 }
 
 #poem-topic-box::placeholder {
   /* for Chrome, Opera, and Safari */
   text-align: center;
-  line-height: 3;
 }
 
 #poem-topic-box:-moz-placeholder {
   /* for Firefox 18- */
   text-align: center;
-  line-height: 3;
 }
 
 #poem-topic-box::-moz-placeholder {
   /* for Firefox 19+ */
   text-align: center;
-  line-height: 3;
 }
 
 #poem-topic-box:-ms-input-placeholder {
   /* for Internet Explorer */
   text-align: center;
-  line-height: 3;
-}
-
-#submit-button {
-  margin: 30px 0;
 }
 
 #typewriter {

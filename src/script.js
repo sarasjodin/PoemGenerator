@@ -46,18 +46,38 @@ poemFormElement.addEventListener("submit", generatePoem);
 // Get the input element
 let input = document.getElementById("poem-topic-box");
 
+// ... (your existing code for typewriter and poem generation)
+
+// Create "Create another poem" button dynamically
+let createAnotherPoemButton = document.createElement("button");
+createAnotherPoemButton.id = "create-another-poem-button";
+createAnotherPoemButton.innerText = "Create another poem";
+createAnotherPoemButton.style.display = "none"; // Hide the button initially
+createAnotherPoemButton.addEventListener("click", function () {
+  // Reload the page on button click
+  location.reload();
+});
+
+// Append the button to the main container
+document.querySelector("main").appendChild(createAnotherPoemButton);
+
+// Show the button immediately after clicking "Submit"
+document.getElementById("submit-button").addEventListener("click", function () {
+  createAnotherPoemButton.style.display = "inline-block";
+});
+
 // Define a function to adjust the input width
-function adjustWidth() {
-  // Get the input value
-  let value = input.value;
-
-  // Get the number of characters in the input value
-  let length = value.length;
-
-  // Set the input width to 10 pixels times the number of characters
-  input.style.width = 5 * length + "px";
+/* function adjustWidth() {
+ */ // Get the input value
+/*   let value = input.value;
+ */
+// Get the number of characters in the input value
+/*   let length = value.length;
+ */
+// Set the input width to 10 pixels times the number of characters
+/*   input.style.width = 5 * length + "px";
 }
-
+ */
 // Create an array of poem types
 let poemTypes = [
   "Random",
