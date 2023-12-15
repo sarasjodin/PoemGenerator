@@ -1,4 +1,4 @@
-// Generator type writing
+// Type writing functionality
 let heading = document.querySelector("#typewriter");
 let text = "generator";
 let speed = 120;
@@ -31,23 +31,35 @@ function typeNextChar() {
 
 typeNextChar();
 
+// Create the js for the form
+
+function generatePoem(event) {
+  event.preventDefault();
+
+  let poemContainer = document.querySelector("#poem");
+  poemFormElement.innerHTML = "Text, text";
+}
+
+let poemFormElement = document.querySelector("#poem-generator-form");
+poemFormElement.addEventListener("submit", generatePoem);
+
 // Get the input element
-var input = document.getElementById("poem-topic-box");
+let input = document.getElementById("poem-topic-box");
 
 // Define a function to adjust the input width
 function adjustWidth() {
   // Get the input value
-  var value = input.value;
+  let value = input.value;
 
   // Get the number of characters in the input value
-  var length = value.length;
+  let length = value.length;
 
   // Set the input width to 10 pixels times the number of characters
   input.style.width = 5 * length + "px";
 }
 
 // Create an array of poem types
-var poemTypes = [
+let poemTypes = [
   "Random",
   "Sonnet",
   "Villanelle",
@@ -61,16 +73,16 @@ var poemTypes = [
 ];
 
 // Generate a random index from the array
-var randomIndex = Math.floor(Math.random() * poemTypes.length);
+let randomIndex = Math.floor(Math.random() * poemTypes.length);
 
 // Access the corresponding element from the array
-var randomPoemType = poemTypes[randomIndex];
+let randomPoemType = poemTypes[randomIndex];
 
 // Store the URL of the API endpoint
-var url = "https://www.poem-generator.org.uk/api/";
+let url = "https://www.poem-generator.org.uk/api/";
 
 // Store the parameters of the API request
-var params = { type: randomPoemType, keywords: "some keywords" };
+let params = { type: randomPoemType, keywords: "some keywords" };
 
 /* Define an async function
 async function makePostRequest() {
