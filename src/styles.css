@@ -10,6 +10,10 @@ body {
   );
 }
 
+p {
+  margin-bottom: 0.5rem;;
+}
+
 header {
   padding-top: 30px;
 }
@@ -32,11 +36,8 @@ legend {
 }
 
 footer {
-  padding-top: 5%;
-}
-
-label {
-  padding-right: 15px;
+  padding: 1rem 0 2rem 0;
+  font-size: 0.9rem;
 }
 
 ul {
