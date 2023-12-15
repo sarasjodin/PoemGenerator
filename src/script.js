@@ -97,3 +97,60 @@ poemFormElement.addEventListener("submit", function (event) {
     textInfo.style.display = "none";
   }
 });
+
+// Define a function to adjust the input width
+/* function adjustWidth() {
+ */ // Get the input value
+/*   let value = input.value;
+ */
+// Get the number of characters in the input value
+/*   let length = value.length;
+ */
+// Set the input width to 10 pixels times the number of characters
+/*   input.style.width = 5 * length + "px";
+}
+ */
+// Create an array of poem types
+let poemTypes = [
+  "Christmas gift poem that rhyme",
+  "Gift poem that rhyme",
+  "Random",
+  "Sonnet",
+  "Villanelle",
+  "Haiku",
+  "Ballad",
+  "Limerick",
+  "Free verse",
+  "Acrostic",
+  "Cinquain",
+  "Epic",
+];
+
+// Generate a random index from the array
+let randomIndex = Math.floor(Math.random() * poemTypes.length);
+
+// Access the corresponding element from the array
+let randomPoemType = poemTypes[randomIndex];
+
+// Store the URL of the API endpoint
+let url = "https://www.poem-generator.org.uk/api/";
+
+// Store the parameters of the API request
+let params = { type: randomPoemType, keywords: "some keywords" };
+
+/* Define an async function
+async function makePostRequest() {
+  try {
+    // Make a POST request with axios and await the response
+    let response = await axios.post(url, params);
+
+    // Handle the response
+    console.log(response.data);
+  } catch (error) {
+    // Handle the error
+    console.error(error);
+  }
+}
+
+// Call the async function
+makePostRequest();*/
