@@ -88,11 +88,6 @@ button:hover,
   transform: scale(1.05);
 }
 
-.instructions {
-  font-size: 1rem;
-  margin-bottom: 2px;
-}
-
 #poem-topic-box {
   min-width: 25%;
   max-width: 100%;
