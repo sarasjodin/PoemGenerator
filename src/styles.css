@@ -11,7 +11,7 @@ body {
 }
 
 p {
-  margin-bottom: 0.5rem;;
+  margin-bottom: 0.5rem;
 }
 
 header {
@@ -95,26 +95,6 @@ button:hover,
   line-height: normal;
 }
 
-#poem-topic-box::placeholder {
-  /* for Chrome, Opera, and Safari */
-  text-align: center;
-}
-
-#poem-topic-box:-moz-placeholder {
-  /* for Firefox 18- */
-  text-align: center;
-}
-
-#poem-topic-box::-moz-placeholder {
-  /* for Firefox 19+ */
-  text-align: center;
-}
-
-#poem-topic-box:-ms-input-placeholder {
-  /* for Internet Explorer */
-  text-align: center;
-}
-
 #typewriter {
   line-height: 35px;
   height: 42px;
@@ -124,11 +104,7 @@ button:hover,
 }
 
 input[type="radio"] {
-  /* The native appearance is hidden */
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   line-height: 1.8;
 }
 
