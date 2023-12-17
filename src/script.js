@@ -114,21 +114,57 @@ poemFormElement.addEventListener("submit", function (event) {
 });
 
 // Create an array of poem types
-/* let poemTypes = [
-  "Christmas gift poem that rhyme",
-  "Gift poem that rhyme",
-  "Random",
-  "Sonnet",
-  "Villanelle",
-  "Haiku",
-  "Ballad",
-  "Limerick",
-  "Free verse",
-  "Acrostic",
-  "Cinquain",
-  "Epic",
-]; */
-
+let options = {
+  "Christmas gift": [
+    "This option will generate a Christmas gift poem that rhyme",
+    "Add information about your gift, write if you want me to avoid mentioning the exact gift word or if you want the last rhyme to intend that word but leaving it out.",
+  ],
+  Gift: ["This option will generate a gift poem that rhyme", "yy"],
+  Sonnet: [
+    "This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean.",
+    "xx",
+  ],
+  Haiku: [
+    "This option will generate a three-line poem that originated in Japan and follows a syllable pattern of 5-7-5. Haikus usually refer to nature or a moment of beauty.",
+    "xx",
+  ],
+  Limerick: [
+    "This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines.",
+    "xx",
+  ],
+  Ballad: [
+    "This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line.",
+    "xx",
+  ],
+  Acrostic: [
+    "This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message.",
+    "xx",
+  ],
+  Villanelle: [
+    "This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem.",
+    "xx",
+  ],
+  Cinquain: [
+    "This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme.",
+    "xx",
+  ],
+  Epic: [
+    "This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone.",
+    "xx",
+  ],
+  "No style": [
+    "This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks.",
+    "xx",
+  ],
+  "Free verse": [
+    "This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion.",
+    "xx",
+  ],
+  Random: [
+    "This option will generate a randomly chosen poem type from the list.",
+    "xx",
+  ],
+};
 // Generate a random index from the array
 /* let randomIndex = Math.floor(Math.random() * poemTypes.length);
  */

@@ -117,29 +117,30 @@ button:hover,
   font-weight: 600;
 }
 
+/*
 input[type="radio"] {
   appearance: none;
   line-height: 1.8;
 }
 
-input[type="radio"]::before {
+input[type="radio"]::before {*/
   /* A pseudo-element is created before the radio button */
-  content: "";
+/*  content: "";*/
   /* The pseudo-element has a circular shape */
-  display: inline-block;
+/*  display: inline-block;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
+  border-radius: 50%;*/
   /* The pseudo-element has a background color and a border color */
-  background-color: rgb(255, 255, 255);
+/*  background-color: rgb(255, 255, 255);
   border: 2px solid #9dc0ef;
 }
 
-input[type="radio"]:checked::before {
+input[type="radio"]:checked::before {*/
   /* When the radio button is checked, the background color and the border color are changed */
-  background-color: rgb(77, 146, 237);
+/*  background-color: rgb(77, 146, 237);
   border-color: #9dc0ef;
-}
+}*/
 
 footer {
   display: flex;
