@@ -35,33 +35,32 @@ legend {
   font-weight: 600;
 }
 
-footer {
-  padding: 1rem 0 2rem 0;
-  font-size: 0.9rem;
-}
-
-#poem-generator-form {
+#app-container {
+  margin: 15px auto;
+  display: block;
   padding: 0 20px;
   line-height: 2;
   border-radius: 10px;
   width: 40%;
-  margin: 15px auto;
   background-color: rgba(255, 255, 255, 0.4);
   text-align: center;
   font-size: 0.9rem;
   height: auto;
 }
 
+/* #poem-generator-form {
+
+} */
+
 #poem-container {
-  /*   padding: 0 20px;
- */
   line-height: 2;
   border-radius: 10px;
   width: 90%;
   height: auto;
   margin: auto;
-/*   background-color: rgba(255, 255, 255, 0.4);
- */  font-size: 0.9rem;
+  /*   background-color: rgba(255, 255, 255, 0.4);
+ */
+  font-size: 0.9rem;
 }
 
 #poem-generator-container {
@@ -140,4 +139,45 @@ input[type="radio"]:checked::before {
   /* When the radio button is checked, the background color and the border color are changed */
   background-color: rgb(77, 146, 237);
   border-color: #9dc0ef;
+}
+
+footer {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: center;
+  padding: 0 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+/* footer a:hover {
+  transform: scale(1.05);
+  filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(190deg)
+    brightness(90%);
+} */
+
+footer a {
+  display: inline-block;
+}
+
+footer a:hover {
+  transform: scale(1.05);
+  filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(190deg)
+    brightness(90%);
+  padding-left: 0.15rem;
+}
+
+footer .sara {
+  flex: 46%;
+  padding-bottom: 0.1rem;
+}
+
+footer .gitbub,
+footer .netlify {
+  flex: 27%;
+}
+
+.group {
+  padding-left: 10px;
 }
