@@ -15,7 +15,7 @@ p {
 }
 
 header {
-  padding-top: 30px;
+  padding-top: 15px;
 }
 
 h1 {
@@ -36,7 +36,7 @@ legend {
 }
 
 #app-container {
-  margin: 15px auto;
+  margin: 20px auto;
   display: block;
   padding: 0 20px;
   line-height: 2;

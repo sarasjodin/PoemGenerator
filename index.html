@@ -12,17 +12,17 @@
     />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-    <title>sarasjodin.com | Poem Generator</title>
+    <title>Poem Generator | sarasjodin.com</title>
   </head>
   <body>
     <div id="app-container">
       <header>
         <img
-          src="src/images/logo_chatbot_sara-01.svg"
+          src="src/images/logo_chatbot_sara.svg"
           width="130px"
           alt="A bot named Sara"
         />
-        <p>Hi, Let me introduce myself!<br />I'm Sara, your</p>
+        <p>Hi, Let me introduce myself! I'm Sara, your</p>
         <h1>AI Poem</h1>
         <h2 class="typewriter" id="typewriter"></h2>
       </header>
@@ -70,7 +70,7 @@
                 />
                 <label
                   for="option3"
-                  title="This option will generate a randomly generated poem type (out of the 11 types mentioned in this section)"
+                  title='This option will generate a randomly generated poem type, except for the "no style" option.'
                   >Random</label
                 >
                 <input
@@ -198,6 +198,18 @@
                   title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
                   >Epic</label
                 >
+                <input
+                  class="radiobuttons"
+                  type="radio"
+                  id="option13"
+                  name="option"
+                  value="blank"
+                />
+                <label
+                  for="option13"
+                  title="This option will not generate any pre-defined poem style, but you will have to specifically ask for it in the below text box."
+                  >No style</label
+                >
               </div>
             </fieldset>
             <fieldset>
@@ -230,51 +242,51 @@
       </main>
     </div>
     <footer>
-        <div>
-          Coded by
-          <a
-            href="https://saras-portfolio.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              class="sara small-logo"
-              src="src/images/sarasjodinLogo.svg"
-              width="140"
-              alt="Logo sarasjodin.com"
-              title="sarasjodin.com"
-            />
-          </a>
-        </div>
-        <div class="group">
-          Source code on
-          <a
-            href="https://github.com/sarasjodin/ReactWeatherApp"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              class="github"
-              src="src/images/github-mark.svg"
-              width="25"
-              alt="Logo GitHub"
-              title="GitHub"
-            />
-          </a>
-        </div>
-        <div class="group">
-          Deployed with
-          <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
-            <img
-              class="netlify"
-              src="src/images/netlifyLogo.png"
-              width="60"
-              alt="Logo Netlify.com"
-              title="Netlify"
-            />
-          </a>
-        </div>
-          </footer>
+      <div>
+        Coded by
+        <a
+          href="https://saras-portfolio.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            class="sara small-logo"
+            src="src/images/sarasjodinLogo.svg"
+            width="140"
+            alt="Logo sarasjodin.com"
+            title="sarasjodin.com"
+          />
+        </a>
+      </div>
+      <div class="group">
+        Source code on
+        <a
+          href="https://github.com/sarasjodin/ReactWeatherApp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            class="github"
+            src="src/images/github-mark.svg"
+            width="25"
+            alt="Logo GitHub"
+            title="GitHub"
+          />
+        </a>
+      </div>
+      <div class="group">
+        Deployed with
+        <a href="https://www.netlify.com/" target="_blank" rel="noreferrer">
+          <img
+            class="netlify"
+            src="src/images/netlifyLogo.png"
+            width="60"
+            alt="Logo Netlify.com"
+            title="Netlify"
+          />
+        </a>
+      </div>
+    </footer>
     <script src="src/script.js"></script>
   </body>
 </html>
