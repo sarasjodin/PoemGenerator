@@ -30,50 +30,53 @@ typeNextChar();
 
 document.addEventListener("DOMContentLoaded", function () {
   let poemContainer = document.querySelector("#poem-container");
-  let createAnotherPoemButton = document.querySelector(
-    "#create-another-poem-button"
-  );
-
-  async function makeGetRequest(apiUrl, apiKey) {
-    let headers = {
-      Authorization: `Bearer ${apiKey}`,
-    };
-
-    try {
-      const response = await axios.get(apiUrl);
-      return response.data.answer;
-      console.log(response.data.answer);
-    } catch (error) {
-      console.log(error);
-      throw error;
-    }
-  }
-
-  async function fetchData(apiUrl, apiKey) {
-    try {
-      const response = await makeGetRequest(apiUrl, apiKey);
-      // Display generated poem
-      poemContainer.textContent = response;
-    } catch (error) {}
-  }
-
-  let submitButton = document.querySelector("#submit-button");
-submitButton.addEventListener("click", function () {
   let reloadButton = document.querySelector("#reload-button");
-// Hide the button initially
-reloadButton.style.display = "none";
-// Show the button when the poem is received
-reloadButton.style.display = "block";
+  let submitButton = document.querySelector("#submit-button");
+
+  submitButton.addEventListener("click", async function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior    // Hide the button initially
+    reloadButton.style.display = "none";
+    // Show the button when the poem is received
+    reloadButton.style.display = "block";
+    // Hide the form if it exists
+    let poemFormElement = document.querySelector("#poem-form-element");
+    if (poemFormElement) {
+      poemFormElement.style.display = "none";
+    }
+
+    // Show the poem container and the "Create another poem" button
+    poemContainer.style.display = "block";
+    reloadButton.style.display = "inline-block";
+
+    async function makeGetRequest(apiUrl, apiKey) {
+      let headers = {
+        Authorization: `Bearer ${apiKey}`,
+      };
+
+      try {
+        const response = await axios.get(apiUrl);
+        return response.data.answer;
+      } catch (error) {
+        throw error;
+      }
+    }
+
+    async function fetchData(apiUrl, apiKey) {
+      try {
+        const response = await makeGetRequest(apiUrl, apiKey);
+        // Display generated poem
+        poemContainer.textContent = response;
+      } catch (error) {}
+    }
+
+    // Example usage:
+    let prompt = "love";
+    let context = "poem";
+    let apiKey = "7166fo94tf124f43f80bab7387ed0a26";
+
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+    // Invoke the fetchData function
+    fetchData(apiUrl, apiKey);
+  });
 });
-
-  // Example usage:
-  let prompt = "love";
-  let context = "poem";
-  let apiKey = "7166fo94tf124f43f80bab7387ed0a26";
-
-  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
-
-  // Invoke the fetchData function
-  fetchData(apiUrl, apiKey);
-});
-
