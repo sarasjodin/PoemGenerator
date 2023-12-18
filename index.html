@@ -30,58 +30,112 @@
         <div id="poem-container">
           <form id="poem-generator-form" action="">
             <fieldset>
-              <legend></legend>
-              <legend>1. Choose poem convention(s)</legend>
-              <!-- Checkbox options for rhyme types -->
-              <label>
-                <input type="checkbox" name="rhymeType" value="correct" />
+              <legend>Choose poem convention</legend>
+              <input
+                class="radio"
+                type="radio"
+                id="option1"
+                name="option1"
+                value="With rhymes"
+                required
+                checked
+              />
+              <label
+                for="option1"
+                title='...there are no specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                >With rhymes</label
+              >
+              <input
+                class="radio"
+                type="radio"
+                id="option2"
+                name="option1"
+                value="Without rhymes"
+                required
+              />
+              <label
+                for="option2"
+                title='...there are no specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                >Without rhymes</label
+              >
+              <input
+                class="radio"
+                type="radio"
+                id="option2"
+                name="option1"
+                value="Random"
+                required
+              />
+              <label
+                for="option3"
+                title='...there are no specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                >Any (random)</label
+              >
+            </fieldset>
+            <fieldset>
+              <legend>Choose poem rhyms</legend>
+
+              <label class="poems">
+                <input
+                  type="checkbox"
+                  name="rhymeType"
+                  value="correct"
+                  checked
+                />
                 Correct Rhymes
               </label>
 
-              <label>
+              <label class="poems">
                 <input type="checkbox" name="rhymeType" value="slanted" />
                 Slanted Rhymes
               </label>
 
-              <label>
-                <input type="checkbox" name="rhymeType" value="eye" /> Eye
-                Rhymes
-              </label>
-
-              <!-- Radio button for "No Rhymes" option -->
-              <label>
-                <input type="radio" name="rhymeType" value="none" /> No Rhymes
+              <label class="poems">
+                <input type="checkbox" name="rhymeType" value="eye" />
+                Eye Rhymes
               </label>
             </fieldset>
             <fieldset>
-              <legend>1. Choose poem style</legend>
+              <legend>Choose poem style</legend>
               <div>
                 <input
                   class="radio"
                   type="radio"
-                  id="option1"
-                  name="option"
-                  value="Correct rhymes"
+                  id="option12"
+                  name="option2"
+                  value="Open Form (or Open Verse) Poem"
                   required
                   checked
                 />
                 <label
-                  for="option1"
-                  title="This option will generate a poem that rhyme, typically used for gifts, etc."
-                  >Correct rhymes</label
+                  for="option12"
+                  title='...there are no specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                  >Open Form</label
                 >
                 <input
                   class="radio"
                   type="radio"
-                  id="option2"
-                  name="option"
-                  value="Slanted rhymes"
+                  id="option11"
+                  name="option2"
+                  value="no style"
+                />
+                <label
+                  for="option11"
+                  title="This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
+                  >No style</label
+                >
+                <input
+                  class="radio"
+                  type="radio"
+                  id="option12"
+                  name="option2"
+                  value="Free verse"
                   required
                 />
                 <label
-                  for="option2"
-                  title="This option will generate a poem that utilises slanted rhyme. Utilising this type for gift rhymes, might make it slightly more difficult to guess the content of the gift and therefore might be more dificult, but also fun."
-                  >Gift</label
+                  for="option12"
+                  title="This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
+                  >Free verse</label
                 >
               </div>
               <div>
@@ -89,7 +143,7 @@
                   class="radio"
                   type="radio"
                   id="option3"
-                  name="option"
+                  name="option2"
                   value="Sonnet"
                   required
                 />
@@ -103,7 +157,7 @@
                   class="radio"
                   type="radio"
                   id="option4"
-                  name="option"
+                  name="option2"
                   value="Haiku"
                   required
                 />
@@ -117,7 +171,7 @@
                   class="radio"
                   type="radio"
                   id="option5"
-                  name="option"
+                  name="option2"
                   value="Limerick"
                   required
                 />
@@ -131,7 +185,7 @@
                   class="radio"
                   type="radio"
                   id="option6"
-                  name="option"
+                  name="option2"
                   value="Ballad"
                   required
                 />
@@ -140,12 +194,13 @@
                   title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
                   >Ballad</label
                 >
-
+              </div>
+              <div>
                 <input
                   class="radio"
                   type="radio"
                   id="option7"
-                  name="option"
+                  name="option2"
                   value="Acrostic"
                   required
                 />
@@ -159,7 +214,7 @@
                   class="radio"
                   type="radio"
                   id="option8"
-                  name="option"
+                  name="option2"
                   value="Villanelle"
                   required
                 />
@@ -173,7 +228,7 @@
                   class="radio"
                   type="radio"
                   id="option9"
-                  name="option"
+                  name="option2"
                   value="Cinquain"
                   required
                 />
@@ -187,7 +242,7 @@
                   class="radio"
                   type="radio"
                   id="option10"
-                  name="option"
+                  name="option2"
                   value="Epic"
                   required
                 />
@@ -197,61 +252,9 @@
                   >Epic</label
                 >
               </div>
-              <div>
-                <input
-                  class="radio"
-                  type="radio"
-                  id="option11"
-                  name="option"
-                  value="no style"
-                />
-                <label
-                  for="option11"
-                  title="This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
-                  >No style</label
-                >
-                <input
-                  class="radio"
-                  type="radio"
-                  id="option12"
-                  name="option"
-                  value="Free verse"
-                  required
-                />
-                <label
-                  for="option12"
-                  title="This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
-                  >Free verse</label
-                >
-                <input
-                  class="radio"
-                  type="radio"
-                  id="option12"
-                  name="option"
-                  value="Open Form (or Open Verse) Poem"
-                  required
-                />
-                <label
-                  for="option12"
-                  title='...there are no specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
-                  >Open Form (or Open Verse) Poem</label
-                >
-                <input
-                  class="radio"
-                  type="radio"
-                  id="option13"
-                  name="option"
-                  value="random"
-                />
-                <label
-                  for="option13"
-                  title="This option will generate a randomly chosen poem type."
-                  >Random</label
-                >
-              </div>
             </fieldset>
             <fieldset>
-              <legend>2. Add poem topic</legend>
+              <legend>Add poem topic</legend>
               <textarea
                 id="poem-topic-box"
                 type="text"
@@ -263,7 +266,6 @@
               ></textarea>
             </fieldset>
             <fieldset>
-              <legend>3. Submit poem request</legend>
               <input type="submit" id="submit-button" />
             </fieldset>
             <div id="waiting-message" style="display: none">

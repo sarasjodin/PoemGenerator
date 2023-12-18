@@ -15,17 +15,13 @@ p {
 }
 
 header {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 h1 {
   color: #45a2ff;
   margin-bottom: 0;
   font-weight: 600;
-}
-
-h2 {
-  margin-bottom: 20px;
 }
 
 legend {
@@ -35,13 +31,17 @@ legend {
   font-weight: 600;
 }
 
+.poems {
+  padding: 0 6px 0 0;
+}
+
 #app-container {
-  margin: 20px auto;
+  margin: 15px auto;
   display: block;
   padding: 0 20px;
   line-height: 2;
   border-radius: 10px;
-  width: 40%;
+  width: 50%;
   background-color: rgba(255, 255, 255, 0.4);
   text-align: center;
   font-size: 0.9rem;
@@ -124,20 +124,20 @@ input[type="radio"] {
 }
 
 input[type="radio"]::before {*/
-  /* A pseudo-element is created before the radio button */
+/* A pseudo-element is created before the radio button */
 /*  content: "";*/
-  /* The pseudo-element has a circular shape */
+/* The pseudo-element has a circular shape */
 /*  display: inline-block;
   width: 16px;
   height: 16px;
   border-radius: 50%;*/
-  /* The pseudo-element has a background color and a border color */
+/* The pseudo-element has a background color and a border color */
 /*  background-color: rgb(255, 255, 255);
   border: 2px solid #9dc0ef;
 }
 
 input[type="radio"]:checked::before {*/
-  /* When the radio button is checked, the background color and the border color are changed */
+/* When the radio button is checked, the background color and the border color are changed */
 /*  background-color: rgb(77, 146, 237);
   border-color: #9dc0ef;
 }*/
