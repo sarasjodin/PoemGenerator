@@ -31,8 +31,18 @@ legend {
   font-weight: 600;
 }
 
-.poems {
-  padding: 0 6px 0 0;
+.more-space-in-between {
+  padding: 0 5px 0 0;
+}
+
+.labels {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+#haiku-other-input {
+  width: 147px;
+  height: 20px;
 }
 
 #app-container {
@@ -94,7 +104,7 @@ button,
   line-height: 1.5;
 }
 
-#create-another-poem-button {
+#reload-button {
   display: none;
 }
 
