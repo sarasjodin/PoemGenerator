@@ -30,23 +30,19 @@ typeNextChar();
 
 document.addEventListener("DOMContentLoaded", function () {
   let poemContainer = document.querySelector("#poem-container");
-  let reloadButton = document.querySelector("#reload-button");
   let submitButton = document.querySelector("#submit-button");
+  let reloadButton; // Declare reloadButton in the outer scope
 
   submitButton.addEventListener("click", async function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior    // Hide the button initially
-    reloadButton.style.display = "none";
-    // Show the button when the poem is received
-    reloadButton.style.display = "block";
+    event.preventDefault(); // Prevent the default form submission behavior    //
     // Hide the form if it exists
     let poemFormElement = document.querySelector("#poem-form-element");
     if (poemFormElement) {
       poemFormElement.style.display = "none";
     }
 
-    // Show the poem container and the "Create another poem" button
+    // Show the poem container
     poemContainer.style.display = "block";
-    reloadButton.style.display = "inline-block";
 
     async function makeGetRequest(apiUrl, apiKey) {
       let headers = {
@@ -78,5 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Invoke the fetchData function
     fetchData(apiUrl, apiKey);
-  });
-});
+
+    reloadButton = document.createElement("button");
+    reloadButton.id = "reload-button";
+    reloadButton.innerText = "Create another poem";
+    reloadButton.style.display = "none";
+    reloadButton.addEventListener("click", function () {
+      location.reload();
+    });
+
+    document.querySelector("main").appendChild(reloadButton);
+
+    // Ensure reloadButton is defined before modifying its style
+    if (reloadButton) {
+      reloadButton.style.display = "inline-block";
+  };
+});})
