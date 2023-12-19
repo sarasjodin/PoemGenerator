@@ -40,425 +40,428 @@
       <main>
         <div id="poem-container">
           <form id="poem-form-element" action="">
-            <fieldset>
-              <legend>Choose poem convention</legend>
-              <!-- Radio Button 1 -->
-              <label
-                class="more-space-in-between"
-                title="This option generates poems with rhymes"
-              >
-                <input
-                  type="radio"
-                  id="with-rhymes"
-                  name="choose-poem-convention"
-                  value="with-rhymes"
-                  custom-data="Please, create a poem with rhymes."
-                  required
-                  checked
-                />
-                With rhymes</label
-              >
-
-              <!-- Radio Button 2 -->
-              <label
-                class="more-space-in-between"
-                title="This option generates poems without rhymes"
-              >
-                <input
-                  type="radio"
-                  id="no-rhymes"
-                  name="choose-poem-convention"
-                  value="no-rhymes"
-                  custom-data="Please, create a poem without rhymes."
-                />
-                No rhymes</label
-              >
-
-              <!-- Radio Button 3 -->
-              <label
-                class="more-space-in-between"
-                title="This option does not give any input about the poem style."
-              >
-                <input
-                  type="radio"
-                  id="no-input"
-                  name="choose-poem-convention"
-                  value="no-input"
-                  custom-data="Please, create a poem."
-                />
-                No input</label
-              >
-
-              <!-- Radio Button 4 -->
-              <label
-                class="more-space-in-between"
-                title="This option will generate a random rhyme style and / or poem style, but you could still add your poem topic input in the text box below, to personalise the generated poem."
-              >
-                <input
-                  type="radio"
-                  id="random"
-                  name="choose-poem-convention"
-                  value="random"
-                  custom-data="Please, create a random poem."
-                />
-                Random</label
-              >
-            </fieldset>
-            <fieldset>
-              <legend>Choose poem rhyms</legend>
-              <div>
-                <!-- Checkbox 1 -->
+            <div id="inner-form-element">
+              <fieldset>
+                <legend>Choose poem convention</legend>
+                <!-- Radio Button 1 -->
                 <label
                   class="more-space-in-between"
-                  title='Correct rhymes, also known as perfect rhymes, occur when the stressed vowel sounds and the sounds that follow them are identical in both words. This includes the vowel sound and any consonant sounds that follow it. Example: "cat" and "bat" are correct rhymes because both words end with the same vowel sound /æ/ and the same consonant sound /t/.'
+                  title="This option generates poems with rhymes"
                 >
                   <input
-                    type="checkbox"
-                    id="correct-rhyme"
-                    name="choose-poem-rhymes"
-                    value="correct-rhyme"
-                    custom-data="Use correct rhymes and"
+                    type="radio"
+                    id="with-rhymes"
+                    name="choose-poem-convention"
+                    value="with-rhymes"
+                    custom-data="Please, create a poem with rhymes."
+                    required
                     checked
                   />
-                  Correct rhymes</label
+                  With rhymes</label
                 >
 
-                <!-- Checkbox 2 -->
+                <!-- Radio Button 2 -->
                 <label
                   class="more-space-in-between"
-                  title='Slant rhymes, also called near rhymes, occur when the correspondence between sounds is close but not exact. This includes words with similar, but not identical, vowel or consonant sounds. Example: "lake" and "luck" are slant rhymes. While the ending consonant sounds are different, the vowel sounds are similar (long "a" in "lake" and short "u" in "luck").'
+                  title="This option generates poems without rhymes"
                 >
                   <input
-                    type="checkbox"
-                    id="slanted-rhyme"
-                    name="choose-poem-rhymes"
-                    value="slanted-rhyme"
-                    custom-data="Allow slanted rhymes and"
+                    type="radio"
+                    id="no-rhymes"
+                    name="choose-poem-convention"
+                    value="no-rhymes"
+                    custom-data="Please, create a poem without rhymes."
                   />
-                  Slanted rhymes</label
+                  No rhymes</label
                 >
 
-                <!-- Checkbox 3 -->
+                <!-- Radio Button 3 -->
                 <label
                   class="more-space-in-between"
-                  title='Eye rhymes refer to words that look like they should rhyme because their spellings are similar, but they don&apos;t actually rhyme when pronounced. In other words, the rhyme is based on the visual appearance rather than the sound. Example: "love" and "move" are eye rhymes. They have a similar ending visually but do not rhyme when pronounced.'
+                  title="This option does not give any input about the poem style."
                 >
                   <input
-                    type="checkbox"
-                    id="eye-rhyme"
-                    name="choose-poem-rhymes"
-                    value="eye-rhyme"
-                    custom-data="Allow eye rhymes and"
+                    type="radio"
+                    id="no-input"
+                    name="choose-poem-convention"
+                    value="no-input"
+                    custom-data="Please, create a poem."
                   />
-                  Eye rhymes</label
-                >
-              </div>
-              <div>
-                <!-- Checkbox 4 -->
-                <label
-                  class="more-space-in-between"
-                  title='Assonant rhymes involve the repetition of vowel sounds in stressed syllables. The consonant sounds may differ. Example: "make" and "late" are assonant rhymes because they share a similar vowel sound (/eɪ/).'
-                >
-                  <input
-                    type="checkbox"
-                    id="assonant-rhyme"
-                    name="choose-poem-rhymes"
-                    value="assonant-rhyme"
-                    custom-data="Allow assonant rhymes and"
-                  />
-                  Assonant rhymes</label
+                  No input</label
                 >
 
-                <!-- Checkbox 5 -->
+                <!-- Radio Button 4 -->
                 <label
                   class="more-space-in-between"
-                  title='Consonant rhymes involve the repetition of consonant sounds, including both the initial and ending consonants, with differing vowel sounds. Example: "milk" and "walk" are consonant rhymes because they share similar ending consonant sounds (/k/).'
+                  title="This option will generate a random rhyme style and / or poem style, but you could still add your poem topic input in the text box below, to personalise the generated poem."
                 >
                   <input
-                    type="checkbox"
-                    id="consonant-rhyme"
-                    name="choose-poem-rhymes"
-                    value="consonant-rhyme"
-                    custom-data="Allow consonant rhymes and"
+                    type="radio"
+                    id="random"
+                    name="choose-poem-convention"
+                    value="random"
+                    custom-data="Please, create a random poem."
                   />
-                  Consonant rhymes</label
+                  Random</label
                 >
+              </fieldset>
+              <fieldset>
+                <legend>Choose poem rhyms</legend>
+                <div>
+                  <!-- Checkbox 1 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Correct rhymes, also known as perfect rhymes, occur when the stressed vowel sounds and the sounds that follow them are identical in both words. This includes the vowel sound and any consonant sounds that follow it. Example: "cat" and "bat" are correct rhymes because both words end with the same vowel sound /æ/ and the same consonant sound /t/.'
+                  >
+                    <input
+                      type="checkbox"
+                      id="correct-rhyme"
+                      name="choose-poem-rhymes"
+                      value="correct-rhyme"
+                      custom-data="Use correct rhymes and"
+                      checked
+                    />
+                    Correct rhymes</label
+                  >
 
-                <!-- Checkbox 6 -->
-                <label
-                  class="more-space-in-between"
-                  title='Internal rhymes occur when rhyming words appear within the same line of poetry. Example: "Once upon a midnight dreary, while I pondered, weak and weary...'
-                >
-                  <input
-                    type="checkbox"
-                    id="internal-rhyme"
-                    name="choose-poem-rhymes"
-                    value="inernal-rhyme"
-                    custom-data="Allow inernal rhymes and"
-                  />
-                  Internal rhymes</label
-                >
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>Choose poem style</legend>
-              <div>
-                <!-- Radio Button 5 -->
-                <label
-                  class="more-space-in-between"
-                  title='This option does not have any specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
-                >
-                  <input
-                    type="radio"
-                    id="open-form"
-                    name="choose-poem-style"
-                    value="open-form"
-                    custom-data="Utilise the open form poem style, which does not have any specific instructions or constraints on the poem style. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet..."
-                    checked
-                  />
-                  Open form</label
-                >
-                <!-- Radio Button 6 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
-                >
-                  <input
-                    type="radio"
-                    id="no-style"
-                    name="choose-poem-style"
-                    value="no-style"
-                    custom-data="Utilise the no style poem style, which does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
-                  />
-                  No style</label
-                >
-                <!-- Radio Button 7 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
-                >
-                  <input
-                    type="radio"
-                    id="free-verse"
-                    name="choose-poem-style"
-                    value="free-verse"
-                    custom-data="Utilise the free-verse poem style, which does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
-                  />
-                  Free verse</label
-                >
-                <!-- Just a label 2 -->
-                <span
-                  class="labels"
-                  title="Sonnet is a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean."
-                  >Sonnet:</span
-                >
-                <!-- Radio Button 11 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
-                >
-                  <input
-                    type="radio"
-                    id="sonnet-petrarchan"
-                    name="choose-poem-style"
-                    value="sonnet-petrarchan"
-                    custom-data="Utilise the sonnet petrarchan poem style that has 14 lines, divided into two parts: an octave (the first eight lines) and a sestet (the last six lines). The octave usually presents a problem or a question, and the sestet provides a solution or an answer. The rhyme scheme of the octave is ABBA ABBA, and the rhyme scheme of the sestet can vary, but the most common are CDE CDE or CDC CDC."
-                    required
-                  />
-                  Petrarchan</label
-                >
-                <!-- Radio Button 12 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
-                >
-                  <input
-                    type="radio"
-                    id="sonnet-shakespearean"
-                    name="choose-poem-style"
-                    value="sonnet-shakespearean"
-                    custom-data="Utilise the sonnet shakespearean poem style that has 14 lines, divided into three quatrains and a couplet. The rhyme scheme is ABAB CDCD EFEF GG, and the meter is iambic pentameter, which means each line has 10 syllables with alternating stress. The Shakespearean sonnet usually expresses a single theme or idea, often related to love, beauty, or mortality. The first 12 lines present a problem or a question, and the last two lines provide a resolution or an answer."
-                    required
-                  />
-                  Shakespearean</label
-                >
-              </div>
-              <div>
-                <!-- Just a label 1 -->
-                <span
-                  class="labels"
-                  title="The following options will generate a three-line poem that originated in Japan and follows a syllable pattern of 5-7-5. Haikus usually refer to nature or a moment of beauty. In the smaller textbox you can add a personalised Haiku topic."
-                  >Haiku:</span
-                >
-                <!-- Radio Button 8 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a haiku poem about nature."
-                >
-                  <input
-                    type="radio"
-                    id="haiku-nature"
-                    name="choose-haiku-style"
-                    value="haiku-nature"
-                    custom-data="Utilise the haiku poem style about nature, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of nature and emotions, that depicts the essence of a specific moment in time."
-                  />
-                  nature</label
-                >
-                <!-- Radio Button 9 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a haiku poem about season."
-                >
-                  <input
-                    type="radio"
-                    id="haiku-season"
-                    name="choose-haiku-style"
-                    value="haiku-season"
-                    custom-data="Utilise the haiku poem style about the season, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of the season and emotions, that depicts the essence of a specific moment in time."
-                  />
-                  season</label
-                >
-                <!-- Radio Button 10 -->
-                <label
-                  class="more-space-in-between"
-                  for="haiku-moment-of-beauty"
-                  title="This option will generate a haiku poem about a moment of beauty."
-                >
-                  <input
-                    type="radio"
-                    id="haiku-moment-of-beauty"
-                    name="choose-haiku-style"
-                    value="haiku-moment-of-beauty"
-                    custom-data="Utilise the haiku poem style about the moment of beauty, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on a careful observation of a moment of beauty and emotions, that depicts the essence of a specific moment in time."
-                  />
-                  moment of beauty</label
-                >
+                  <!-- Checkbox 2 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Slant rhymes, also called near rhymes, occur when the correspondence between sounds is close but not exact. This includes words with similar, but not identical, vowel or consonant sounds. Example: "lake" and "luck" are slant rhymes. While the ending consonant sounds are different, the vowel sounds are similar (long "a" in "lake" and short "u" in "luck").'
+                  >
+                    <input
+                      type="checkbox"
+                      id="slanted-rhyme"
+                      name="choose-poem-rhymes"
+                      value="slanted-rhyme"
+                      custom-data="Allow slanted rhymes and"
+                    />
+                    Slanted rhymes</label
+                  >
 
-                <!-- Textbox 1 -->
-                <input
-                  type="text"
-                  id="haiku-other-input"
-                  name="haiku-other-input-text-box"
-                  placeholder="or add personal topic"
-                  maxlength="30"
-                  rows="1"
-                  title="Add a personalised topic to your Haiku poem."
-                />
-              </div>
-              <div>
-                <!-- Radio Button 13 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
-                >
+                  <!-- Checkbox 3 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Eye rhymes refer to words that look like they should rhyme because their spellings are similar, but they don&apos;t actually rhyme when pronounced. In other words, the rhyme is based on the visual appearance rather than the sound. Example: "love" and "move" are eye rhymes. They have a similar ending visually but do not rhyme when pronounced.'
+                  >
+                    <input
+                      type="checkbox"
+                      id="eye-rhyme"
+                      name="choose-poem-rhymes"
+                      value="eye-rhyme"
+                      custom-data="Allow eye rhymes and"
+                    />
+                    Eye rhymes</label
+                  >
+                </div>
+                <div>
+                  <!-- Checkbox 4 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Assonant rhymes involve the repetition of vowel sounds in stressed syllables. The consonant sounds may differ. Example: "make" and "late" are assonant rhymes because they share a similar vowel sound (/eɪ/).'
+                  >
+                    <input
+                      type="checkbox"
+                      id="assonant-rhyme"
+                      name="choose-poem-rhymes"
+                      value="assonant-rhyme"
+                      custom-data="Allow assonant rhymes and"
+                    />
+                    Assonant rhymes</label
+                  >
+
+                  <!-- Checkbox 5 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Consonant rhymes involve the repetition of consonant sounds, including both the initial and ending consonants, with differing vowel sounds. Example: "milk" and "walk" are consonant rhymes because they share similar ending consonant sounds (/k/).'
+                  >
+                    <input
+                      type="checkbox"
+                      id="consonant-rhyme"
+                      name="choose-poem-rhymes"
+                      value="consonant-rhyme"
+                      custom-data="Allow consonant rhymes and"
+                    />
+                    Consonant rhymes</label
+                  >
+
+                  <!-- Checkbox 6 -->
+                  <label
+                    class="more-space-in-between"
+                    title='Internal rhymes occur when rhyming words appear within the same line of poetry. Example: "Once upon a midnight dreary, while I pondered, weak and weary...'
+                  >
+                    <input
+                      type="checkbox"
+                      id="internal-rhyme"
+                      name="choose-poem-rhymes"
+                      value="inernal-rhyme"
+                      custom-data="Allow inernal rhymes and"
+                    />
+                    Internal rhymes</label
+                  >
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Choose poem style</legend>
+                <div>
+                  <!-- Radio Button 5 -->
+                  <label
+                    class="more-space-in-between"
+                    title='This option does not have any specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                  >
+                    <input
+                      type="radio"
+                      id="open-form"
+                      name="choose-poem-style"
+                      value="open-form"
+                      custom-data="Utilise the open form poem style, which does not have any specific instructions or constraints on the poem style. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet..."
+                      checked
+                    />
+                    Open form</label
+                  >
+                  <!-- Radio Button 6 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
+                  >
+                    <input
+                      type="radio"
+                      id="no-style"
+                      name="choose-poem-style"
+                      value="no-style"
+                      custom-data="Utilise the no style poem style, which does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
+                    />
+                    No style</label
+                  >
+                  <!-- Radio Button 7 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
+                  >
+                    <input
+                      type="radio"
+                      id="free-verse"
+                      name="choose-poem-style"
+                      value="free-verse"
+                      custom-data="Utilise the free-verse poem style, which does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
+                    />
+                    Free verse</label
+                  >
+                  <!-- Just a label 2 -->
+                  <span
+                    class="labels"
+                    title="Sonnet is a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean."
+                    >Sonnet:</span
+                  >
+                  <!-- Radio Button 11 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
+                  >
+                    <input
+                      type="radio"
+                      id="sonnet-petrarchan"
+                      name="choose-poem-style"
+                      value="sonnet-petrarchan"
+                      custom-data="Utilise the sonnet petrarchan poem style that has 14 lines, divided into two parts: an octave (the first eight lines) and a sestet (the last six lines). The octave usually presents a problem or a question, and the sestet provides a solution or an answer. The rhyme scheme of the octave is ABBA ABBA, and the rhyme scheme of the sestet can vary, but the most common are CDE CDE or CDC CDC."
+                      required
+                    />
+                    Petrarchan</label
+                  >
+                  <!-- Radio Button 12 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
+                  >
+                    <input
+                      type="radio"
+                      id="sonnet-shakespearean"
+                      name="choose-poem-style"
+                      value="sonnet-shakespearean"
+                      custom-data="Utilise the sonnet shakespearean poem style that has 14 lines, divided into three quatrains and a couplet. The rhyme scheme is ABAB CDCD EFEF GG, and the meter is iambic pentameter, which means each line has 10 syllables with alternating stress. The Shakespearean sonnet usually expresses a single theme or idea, often related to love, beauty, or mortality. The first 12 lines present a problem or a question, and the last two lines provide a resolution or an answer."
+                      required
+                    />
+                    Shakespearean</label
+                  >
+                </div>
+                <div>
+                  <!-- Just a label 1 -->
+                  <span
+                    class="labels"
+                    title="The following options will generate a three-line poem that originated in Japan and follows a syllable pattern of 5-7-5. Haikus usually refer to nature or a moment of beauty. In the smaller textbox you can add a personalised Haiku topic."
+                    >Haiku:</span
+                  >
+                  <!-- Radio Button 8 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a haiku poem about nature."
+                  >
+                    <input
+                      type="radio"
+                      id="haiku-nature"
+                      name="choose-haiku-style"
+                      value="haiku-nature"
+                      custom-data="Utilise the haiku poem style about nature, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of nature and emotions, that depicts the essence of a specific moment in time."
+                    />
+                    nature</label
+                  >
+                  <!-- Radio Button 9 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a haiku poem about season."
+                  >
+                    <input
+                      type="radio"
+                      id="haiku-season"
+                      name="choose-haiku-style"
+                      value="haiku-season"
+                      custom-data="Utilise the haiku poem style about the season, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of the season and emotions, that depicts the essence of a specific moment in time."
+                    />
+                    season</label
+                  >
+                  <!-- Radio Button 10 -->
+                  <label
+                    class="more-space-in-between"
+                    for="haiku-moment-of-beauty"
+                    title="This option will generate a haiku poem about a moment of beauty."
+                  >
+                    <input
+                      type="radio"
+                      id="haiku-moment-of-beauty"
+                      name="choose-haiku-style"
+                      value="haiku-moment-of-beauty"
+                      custom-data="Utilise the haiku poem style about the moment of beauty, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on a careful observation of a moment of beauty and emotions, that depicts the essence of a specific moment in time."
+                    />
+                    moment of beauty</label
+                  >
+
+                  <!-- Textbox 1 -->
                   <input
-                    type="radio"
-                    id="limerick"
-                    name="choose-poem-style"
-                    value="limerick"
-                    custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
-                    required
+                    type="text"
+                    id="haiku-other-input"
+                    name="haiku-other-input-text-box"
+                    placeholder="or add personal topic"
+                    maxlength="30"
+                    rows="1"
+                    title="Add a personalised topic to your Haiku poem."
                   />
-                  Limerick</label
-                >
-                <!-- Radio Button 14 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
-                >
-                  <input
-                    type="radio"
-                    id="ballad"
-                    name="choose-poem-style"
-                    value="ballad"
-                    custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
-                    required
-                  />
-                  Ballad</label
-                >
-                <!-- Radio Button 15 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
-                >
-                  <input
-                    type="radio"
-                    id="acrostic"
-                    name="choose-poem-style"
-                    value="Acrostic"
-                    custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
-                    required
-                  />
-                  Acrostic</label
-                >
-                <!-- Radio Button 16 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
-                >
-                  <input
-                    type="radio"
-                    id="villanelle"
-                    name="choose-poem-style"
-                    value="villanelle"
-                    custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
-                    required
-                  />
-                  Villanelle</label
-                >
-                <!-- Radio Button 17 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
-                >
-                  <input
-                    type="radio"
-                    id="cinquain"
-                    name="choose-poem-style"
-                    value="cinquain"
-                    custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
-                    required
-                  />
-                  Cinquain</label
-                >
-                <!-- Radio Button 18 -->
-                <label
-                  class="more-space-in-between"
-                  title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
-                >
-                  <input
-                    type="radio"
-                    id="epic"
-                    name="choose-poem-style"
-                    value="epic"
-                    custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
-                    required
-                  />
-                  Epic</label
-                >
-              </div>
-            </fieldset>
-            <p id="poem-prompt-collection"></p>
-            <fieldset>
-              <legend>Add poem topic</legend>
-              <textarea
-                id="poem-topic-box"
-                placeholder="Please, be nice and clear, give enough details, & don’t repeat yourself."
-                autocomplete="off"
-                autofocus
-                cols="70%"
-                rows="4"
-                title="Add personalised context to your Haiku poem."
-              ></textarea>
-            </fieldset>
-            <!-- <div id="defaultValue-message" aria-hidden="true">
-              *In the box where you are supposed to add your poem expectations,
-              no additional information was added, therefore this poem was
-              generated with the following default input (as an example): "..."
-            </div> -->
+                </div>
+                <div>
+                  <!-- Radio Button 13 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
+                  >
+                    <input
+                      type="radio"
+                      id="limerick"
+                      name="choose-poem-style"
+                      value="limerick"
+                      custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
+                      required
+                    />
+                    Limerick</label
+                  >
+                  <!-- Radio Button 14 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
+                  >
+                    <input
+                      type="radio"
+                      id="ballad"
+                      name="choose-poem-style"
+                      value="ballad"
+                      custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
+                      required
+                    />
+                    Ballad</label
+                  >
+                  <!-- Radio Button 15 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
+                  >
+                    <input
+                      type="radio"
+                      id="acrostic"
+                      name="choose-poem-style"
+                      value="Acrostic"
+                      custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
+                      required
+                    />
+                    Acrostic</label
+                  >
+                  <!-- Radio Button 16 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
+                  >
+                    <input
+                      type="radio"
+                      id="villanelle"
+                      name="choose-poem-style"
+                      value="villanelle"
+                      custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
+                      required
+                    />
+                    Villanelle</label
+                  >
+                  <!-- Radio Button 17 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
+                  >
+                    <input
+                      type="radio"
+                      id="cinquain"
+                      name="choose-poem-style"
+                      value="cinquain"
+                      custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
+                      required
+                    />
+                    Cinquain</label
+                  >
+                  <!-- Radio Button 18 -->
+                  <label
+                    class="more-space-in-between"
+                    title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
+                  >
+                    <input
+                      type="radio"
+                      id="epic"
+                      name="choose-poem-style"
+                      value="epic"
+                      custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
+                      required
+                    />
+                    Epic</label
+                  >
+                </div>
+              </fieldset>
+              <p id="poem-prompt-collection"></p>
+              <fieldset>
+                <legend>Add poem topic</legend>
+                <textarea
+                  id="poem-topic-box"
+                  placeholder="Please, be nice and clear, give enough details, & don’t repeat yourself."
+                  autocomplete="off"
+                  autofocus
+                  cols="70%"
+                  rows="4"
+                  title="Add personalised context to your Haiku poem."
+                ></textarea>
+              </fieldset>
+            </div>
             <div class="typewriter generated-poem" id="typewriter-poem"></div>
             <div id="button-placeholder">
               <input type="submit" id="submit-button" />
+            </div>
+            <div id="defaultValue-message" <!-- aria-hidden="true" -->
+              > *In the box where you are supposed to add your poem
+              expectations, no additional information was added, therefore this
+              poem was generated with the following default input (as an
+              example): "..."
             </div>
           </form>
         </div>

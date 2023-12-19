@@ -38,7 +38,7 @@ typeNextChar();
 
 // Type writing functionality for words
 let words = []; // You need to set this array with words from your response
-let typewritingPoem = document.querySelector("#poem-container");
+let typewritingPoem = document.querySelector("#inner-form-element");
 let speed2 = 120;
 let delay2 = 3000;
 let pause2 = 500;
@@ -116,8 +116,9 @@ function collectFormData() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  let poemContainer = document.querySelector("#poem-container");
+  poemContainer = document.querySelector("#poem-container");
   let submitButton = document.querySelector("#submit-button");
+  let buttonPlaceholder = document.querySelector("#button-placeholder");
   let reloadButton;
   let defaultWaitingMessage;
 
@@ -126,10 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Submit button clicked");
     collectFormData(); // Add this line
     // Hide the form if it exists
-    let poemFormElement = document.querySelector("#poem-form-element");
+    /* let poemFormElement = document.querySelector("#poem-form-element");
     if (poemFormElement) {
       poemFormElement.style.display = "none";
-    }
+    } */
 
     // Show the poem container
     poemContainer.style.display = "block";
@@ -198,16 +199,18 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("main").appendChild(reloadButton);
 
     // Append the reloadButton to the same parent as poemContainer
-    poemContainer.parentElement.appendChild(reloadButton);
+    buttonPlaceholder.parentElement.appendChild(reloadButton);
 
     // Ensure reloadButton is defined before modifying its style
     if (reloadButton) {
-      reloadButton.style.display = "inline-block";
-    }
+      reloadButton.style.display = "block";
+      reloadButton.style.margin = "auto";  // Center horizontally
+  }
 
     // Use requestAnimationFrame to ensure proper timing for visibility toggle
     requestAnimationFrame(function () {
       defaultWaitingMessage.style.display = "block";
+      defaultWaitingMessage.style.margin = "auto";  // Center horizontally
     });
   });
 });
