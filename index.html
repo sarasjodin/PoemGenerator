@@ -26,7 +26,7 @@
           width="130px"
           alt="A bot named Sara"
         />
-        <p>Hi, Let me introduce myself! I'm Sara, your</p>
+        <p id="introduction">Hi, Let me introduce myself! I'm Sara, your</p>
         <h1>AI Poem</h1>
         <h2 class="typewriter" id="typewriter"></h2>
       </header>
@@ -41,6 +41,7 @@
                 id="with-rhymes"
                 name="choose-poem-convention"
                 value="with-rhymes"
+                custom-data="Please, create a poem with rhymes."
                 checked
               />
               <label class="more-space-in-between" for="with-rhymes"
@@ -49,33 +50,41 @@
 
               <!-- Radio Button 2 -->
               <input
-                class="more-space-in-between"
                 type="radio"
                 id="no-rhymes"
                 name="choose-poem-convention"
                 value="no-rhymes"
+                custom-data="Please, create a poem without rhymes."
               />
-              <label for="no-rhymes">No rhymes</label>
+              <label
+                class="more-space-in-between"
+                title="This option don't have rhymes"
+                for="no-rhymes"
+                >No rhymes</label
+              >
+
               <!-- Radio Button 3 -->
               <input
                 type="radio"
                 id="no-input"
-                name="choose-poem-style"
+                name="choose-poem-convention"
                 value="no-input"
-                checked
+                custom-data="Please, create a poem."
               />
               <label
                 class="more-space-in-between"
-                title="This option does not give any input about the poem style. The output will follow "
+                title="This option does not give any input about the poem style."
                 for="no-input"
                 >No input</label
               >
+
               <!-- Radio Button 4 -->
               <input
                 type="radio"
                 id="random"
                 name="choose-poem-convention"
                 value="random"
+                custom-data="Please, create a random poem."
               />
               <label
                 class="more-space-in-between"
@@ -93,6 +102,7 @@
                   id="correct-rhyme"
                   name="choose-poem-rhymes"
                   value="correct-rhyme"
+                  custom-data="Use correct rhymes and"
                   checked
                 />
                 <label
@@ -108,6 +118,7 @@
                   id="slanted-rhyme"
                   name="choose-poem-rhymes"
                   value="slanted-rhyme"
+                  custom-data="Allow slanded rhymes and"
                 />
                 <label
                   class="more-space-in-between"
@@ -122,6 +133,7 @@
                   id="eye-rhyme"
                   name="choose-poem-rhymes"
                   value="eye-rhyme"
+                  custom-data="Allow eye rhymes and"
                 />
                 <label
                   class="more-space-in-between"
@@ -137,6 +149,7 @@
                   id="assonant-rhyme"
                   name="choose-poem-rhymes"
                   value="assonant-rhyme"
+                  custom-data="Allow assonant rhymes and"
                 />
                 <label
                   class="more-space-in-between"
@@ -151,6 +164,7 @@
                   id="consonant-rhyme"
                   name="choose-poem-rhymes"
                   value="consonant-rhyme"
+                  custom-data="Allow consonant rhymes and"
                 />
                 <label
                   class="more-space-in-between"
@@ -165,6 +179,7 @@
                   id="internal-rhyme"
                   name="choose-poem-rhymes"
                   value="inernal-rhyme"
+                  custom-data="Allow inernal rhymes and"
                 />
                 <label
                   class="more-space-in-between"
@@ -183,6 +198,7 @@
                   id="open-form"
                   name="choose-poem-style"
                   value="open-form"
+                  custom-data="Utilise the open form poem style, which does not have any specific instructions or constraints on the poem style. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet..."
                   checked
                 />
                 <label
@@ -197,6 +213,7 @@
                   id="no-style"
                   name="choose-poem-style"
                   value="no-style"
+                  custom-data="Utilise the no style poem style, which does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
                 />
                 <label
                   class="more-space-in-between"
@@ -210,6 +227,7 @@
                   id="free-verse"
                   name="choose-poem-style"
                   value="free-verse"
+                  custom-data="Utilise the free-verse poem style, which does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
                 />
                 <label
                   class="more-space-in-between"
@@ -233,6 +251,7 @@
                   id="haiku-nature"
                   name="choose-haiku-style"
                   value="haiku-nature"
+                  custom-data="Utilise the haiku poem style about nature, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of nature and emotions, that depicts the essence of a specific moment in time."
                 />
                 <label
                   class="more-space-in-between"
@@ -247,6 +266,7 @@
                   id="haiku-season"
                   name="choose-haiku-style"
                   value="haiku-season"
+                  custom-data="Utilise the haiku poem style about the season, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of the season and emotions, that depicts the essence of a specific moment in time."
                 />
                 <label
                   class="more-space-in-between"
@@ -261,23 +281,24 @@
                   id="haiku-moment-of-beauty"
                   name="choose-haiku-style"
                   value="haiku-moment-of-beauty"
+                  custom-data="Utilise the haiku poem style about the moment of beauty, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on a careful observation of a moment of beauty and emotions, that depicts the essence of a specific moment in time."
                 />
                 <label
                   class="more-space-in-between"
                   for="haiku-moment-of-beauty"
-                  title="This option will generate a haiku poem about season."
+                  title="This option will generate a haiku poem about a moment of beauty."
                   >moment of beauty</label
                 >
 
                 <!-- Textbox 1 -->
-                <!-- <input
+                <input
                   type="text"
                   id="haiku-other-input"
                   name="haiku-other-input-text-box"
                   placeholder="or add personal topic"
                   maxlength="30"
                   rows="1"
-                /> -->
+                />
               </div>
               <div>
                 <!-- Just a label 2 -->
@@ -294,12 +315,13 @@
                   id="sonnet-petrarchan"
                   name="choose-poem-style"
                   value="sonnet-petrarchan"
+                  custom-data="Utilise the sonnet petrarchan poem style that has 14 lines, divided into two parts: an octave (the first eight lines) and a sestet (the last six lines). The octave usually presents a problem or a question, and the sestet provides a solution or an answer. The rhyme scheme of the octave is ABBA ABBA, and the rhyme scheme of the sestet can vary, but the most common are CDE CDE or CDC CDC."
                   required
                 />
                 <label
                   class="more-space-in-between"
                   for="sonnet-petrarchan"
-                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean."
+                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
                   >Petrarchan</label
                 >
                 <!-- Radio Button 12 -->
@@ -309,12 +331,13 @@
                   id="sonnet-shakespearean"
                   name="choose-poem-style"
                   value="sonnet-shakespearean"
+                  custom-data="Utilise the sonnet shakespearean poem style that has 14 lines, divided into three quatrains and a couplet. The rhyme scheme is ABAB CDCD EFEF GG, and the meter is iambic pentameter, which means each line has 10 syllables with alternating stress. The Shakespearean sonnet usually expresses a single theme or idea, often related to love, beauty, or mortality. The first 12 lines present a problem or a question, and the last two lines provide a resolution or an answer."
                   required
                 />
                 <label
                   class="more-space-in-between"
                   for="sonnet-shakespearean"
-                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean."
+                  title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
                   >Shakespearean</label
                 >
               </div>
@@ -326,6 +349,7 @@
                   id="limerick"
                   name="choose-poem-style"
                   value="limerick"
+                  custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
                   required
                 />
                 <label
@@ -341,6 +365,7 @@
                   id="ballad"
                   name="choose-poem-style"
                   value="ballad"
+                  custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
                   required
                 />
                 <label
@@ -356,6 +381,7 @@
                   id="acrostic"
                   name="choose-poem-style"
                   value="Acrostic"
+                  custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
                   required
                 />
                 <label
@@ -371,6 +397,7 @@
                   id="villanelle"
                   name="choose-poem-style"
                   value="villanelle"
+                  custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
                   required
                 />
                 <label
@@ -386,6 +413,7 @@
                   id="cinquain"
                   name="choose-poem-style"
                   value="cinquain"
+                  custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
                   required
                 />
                 <label
@@ -401,6 +429,7 @@
                   id="epic"
                   name="choose-poem-style"
                   value="epic"
+                  custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
                   required
                 />
                 <label
@@ -411,6 +440,7 @@
                 >
               </div>
             </fieldset>
+            <fieldset><p id="poem-prompt-collection"></p></fieldset>
             <fieldset>
               <legend>Add poem topic</legend>
               <textarea
@@ -426,9 +456,6 @@
             <fieldset>
               <input type="submit" id="submit-button" />
             </fieldset>
-            <div id="waiting-message" style="display: none">
-              Please wait for your poem...
-            </div>
             <div class="typewriter generated-poem" id="typewriter-poem"></div>
             <div id="defaultValue-message" style="display: none">
               *In the box where you are supposed to add your poem expectations,
