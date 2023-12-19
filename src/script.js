@@ -1,6 +1,6 @@
 // Type writing functionality
 let heading = document.querySelector("#typewriter");
-let text = "generator";
+let text = " generator";
 let speed1 = 120;
 let delay1 = 3000;
 let pause1 = 500;
@@ -10,7 +10,7 @@ let isTypeNextWordActive = false; // Variable to track if typeNextWord is active
 function typeNextChar() {
   // If typeNextWord is active, pause typeNextChar
   if (isTypeNextWordActive) {
-    setTimeout(typeNextChar, 100); // Adjust the pause duration as needed
+    setTimeout(typeNextChar, 1000); // Adjust the pause duration as needed
     return;
   }
 
@@ -118,7 +118,6 @@ function collectFormData() {
 document.addEventListener("DOMContentLoaded", function () {
   let poemContainer = document.querySelector("#poem-container");
   let submitButton = document.querySelector("#submit-button");
-  let introductionParagraph = document.getElementById("introduction");
   let reloadButton;
   let defaultWaitingMessage;
 
@@ -134,11 +133,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show the poem container
     poemContainer.style.display = "block";
-
-    // Update introduction text when poemContainer becomes visible
-    if (introductionParagraph) {
-      introductionParagraph.textContent = "I'm Sara, your";
-    }
 
     async function makeGetRequest(apiUrl, apiKey) {
       let headers = {
@@ -157,21 +151,19 @@ document.addEventListener("DOMContentLoaded", function () {
     async function fetchData(apiUrl, apiKey) {
       try {
         const response = await makeGetRequest(apiUrl, apiKey);
-
-        // Update introduction text when poemContainer becomes visible
-        if (introductionParagraph) {
-          introductionParagraph.textContent = "Enjoy my poem!";
-          defaultWaitingMessage.style.display = "none";
-          // Display generated poem
-          /* poemContainer.textContent = response; */
-          // Display generated poem
-          words = response.split(" "); // Split the poem into words
-          console.log(words);
-          typeNextWord(); // Start typing words
-        }
+        defaultWaitingMessage.style.display = "none";
+        // Display generated poem
+        /* poemContainer.textContent = response; */
+        // Display generated poem
+        words = response.split(" "); // Split the poem into words
+        console.log(words);
+        typeNextWord(); // Start typing words
+        /* } */
       } catch (error) {
         console.error("Error fetching data:", error);
-        alert("Check your internet connection.");
+        alert(
+          "I have some problems generating the poem. Please, check your internet connection. If the problem persists, contact sarasjodin.com. Best regards Sara, your personal Poem Bot."
+        );
       }
     }
 
@@ -192,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     defaultWaitingMessage.style.display = "none";
 
     // Append the defaultWaitingMessage before the reloadButton
+    document.getElementById("waiting-message");
     poemContainer.parentElement.appendChild(defaultWaitingMessage);
 
     reloadButton = document.createElement("button");

@@ -27,8 +27,9 @@ h1 {
 legend {
   color: #62b1ff;
   text-shadow: 0 0.1em 2em rgba(255, 255, 255, 0.9);
-  padding: 15px 0 0 0;
+  padding: 5px 0 0 0;
   font-weight: 600;
+  margin-bottom: 3px;
 }
 
 .more-space-in-between {
@@ -51,26 +52,18 @@ legend {
   padding: 0 20px;
   line-height: 2;
   border-radius: 10px;
-  width: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
+  width: 60%;
   text-align: center;
   font-size: 0.9rem;
   height: auto;
 }
 
-/* #poem-generator-form {
-
-} */
-
 #poem-container {
   line-height: 2;
   border-radius: 10px;
-  width: 90%;
-  height: auto;
   margin: auto;
-  /*   background-color: rgba(255, 255, 255, 0.4);
- */
-  font-size: 0.9rem;
+  height: 550px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 #poem-generator-container {
@@ -79,7 +72,6 @@ legend {
   border-radius: 10px;
   width: auto;
   margin: 15px auto;
-  background-color: rgba(255, 255, 255, 0.4);
   text-align: center;
   font-size: 0.9rem;
 }
@@ -100,7 +92,6 @@ button,
   opacity: 1;
   text-shadow: 0 0.1em 0.3em rgba(3, 127, 252, 0.8);
   cursor: pointer;
-  margin: 10px 0 30px 0;
   line-height: 1.5;
 }
 
