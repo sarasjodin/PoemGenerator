@@ -119,7 +119,6 @@
                       name="choose-poem-rhymes"
                       value="correct-rhyme"
                       custom-data="Use correct rhymes and"
-                      checked
                     />
                     Correct rhymes</label
                   >
@@ -208,6 +207,7 @@
                   <label
                     class="more-space-in-between"
                     title='This option does not have any specific instructions or constraints on the poem style, you could refer to it as an "Open Form" or "Open Verse" poem. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet.'
+                    visible-when="with-rhymes no-rhymes"
                   >
                     <input
                       type="radio"
@@ -215,7 +215,7 @@
                       name="choose-poem-style"
                       value="open-form"
                       custom-data="Utilise the open form poem style, which does not have any specific instructions or constraints on the poem style. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet..."
-                      checked
+                      visible-when="with-rhymes no-rhymes"
                     />
                     Open form</label
                   >
@@ -223,6 +223,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -230,6 +231,7 @@
                       name="choose-poem-style"
                       value="no-style"
                       custom-data="Utilise the no style poem style, which does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
+                      visible-when="with-rhymes no-rhymes"
                     />
                     No style</label
                   >
@@ -237,6 +239,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a type of poem that does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -244,6 +247,7 @@
                       name="choose-poem-style"
                       value="free-verse"
                       custom-data="Utilise the free-verse poem style, which does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
+                      visible-when="no-rhymes"
                     />
                     Free verse</label
                   >
@@ -251,12 +255,14 @@
                   <span
                     class="labels"
                     title="Sonnet is a 14-line poem that usually deals with love and has a specific rhyme scheme and meter. There are two main types of sonnets: Petrarchan and Shakespearean."
+                    visible-when="with-rhymes"
                     >Sonnet:</span
                   >
                   <!-- Radio Button 11 -->
                   <label
                     class="more-space-in-between"
                     title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
+                    visible-when="with-rhymes"
                   >
                     <input
                       type="radio"
@@ -264,7 +270,7 @@
                       name="choose-poem-style"
                       value="sonnet-petrarchan"
                       custom-data="Utilise the sonnet petrarchan poem style that has 14 lines, divided into two parts: an octave (the first eight lines) and a sestet (the last six lines). The octave usually presents a problem or a question, and the sestet provides a solution or an answer. The rhyme scheme of the octave is ABBA ABBA, and the rhyme scheme of the sestet can vary, but the most common are CDE CDE or CDC CDC."
-                      required
+                      visible-when="with-rhymes"
                     />
                     Petrarchan</label
                   >
@@ -272,6 +278,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a 14-line poem that usually deals with love and has a specific rhyme scheme and meter."
+                    visible-when="with-rhymes"
                   >
                     <input
                       type="radio"
@@ -279,7 +286,7 @@
                       name="choose-poem-style"
                       value="sonnet-shakespearean"
                       custom-data="Utilise the sonnet shakespearean poem style that has 14 lines, divided into three quatrains and a couplet. The rhyme scheme is ABAB CDCD EFEF GG, and the meter is iambic pentameter, which means each line has 10 syllables with alternating stress. The Shakespearean sonnet usually expresses a single theme or idea, often related to love, beauty, or mortality. The first 12 lines present a problem or a question, and the last two lines provide a resolution or an answer."
-                      required
+                      visible-when="with-rhymes"
                     />
                     Shakespearean</label
                   >
@@ -290,11 +297,13 @@
                     class="labels"
                     title="The following options will generate a three-line poem that originated in Japan and follows a syllable pattern of 5-7-5. Haikus usually refer to nature or a moment of beauty. In the smaller textbox you can add a personalised Haiku topic."
                     >Haiku:</span
+                    visible-when="no-rhymes"
                   >
                   <!-- Radio Button 8 -->
                   <label
                     class="more-space-in-between"
                     title="This option will generate a haiku poem about nature."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -302,6 +311,7 @@
                       name="choose-haiku-style"
                       value="haiku-nature"
                       custom-data="Utilise the haiku poem style about nature, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of nature and emotions, that depicts the essence of a specific moment in time."
+                      visible-when="no-rhymes"
                     />
                     nature</label
                   >
@@ -309,6 +319,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a haiku poem about season."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -316,6 +327,7 @@
                       name="choose-haiku-style"
                       value="haiku-season"
                       custom-data="Utilise the haiku poem style about the season, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of the season and emotions, that depicts the essence of a specific moment in time."
+                      visible-when="no-rhymes"
                     />
                     season</label
                   >
@@ -324,6 +336,7 @@
                     class="more-space-in-between"
                     for="haiku-moment-of-beauty"
                     title="This option will generate a haiku poem about a moment of beauty."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -331,6 +344,7 @@
                       name="choose-haiku-style"
                       value="haiku-moment-of-beauty"
                       custom-data="Utilise the haiku poem style about the moment of beauty, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on a careful observation of a moment of beauty and emotions, that depicts the essence of a specific moment in time."
+                      visible-when="no-rhymes"
                     />
                     moment of beauty</label
                   >
@@ -344,6 +358,7 @@
                     maxlength="30"
                     rows="1"
                     title="Add a personalised topic to your Haiku poem."
+                    visible-when="no-rhymes"
                   />
                 </div>
                 <div>
@@ -351,6 +366,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
+                    visible-when="with-rhymes"
                   >
                     <input
                       type="radio"
@@ -358,7 +374,7 @@
                       name="choose-poem-style"
                       value="limerick"
                       custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
-                      required
+                      visible-when="with-rhymes"
                     />
                     Limerick</label
                   >
@@ -366,6 +382,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
+                    visible-when="with-rhymes"
                   >
                     <input
                       type="radio"
@@ -373,7 +390,7 @@
                       name="choose-poem-style"
                       value="ballad"
                       custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
-                      required
+                      visible-when="with-rhymes"
                     />
                     Ballad</label
                   >
@@ -381,6 +398,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
+                    visible-when="with-rhymes no-rhymes"
                   >
                     <input
                       type="radio"
@@ -388,7 +406,7 @@
                       name="choose-poem-style"
                       value="Acrostic"
                       custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
-                      required
+                      visible-when="with-rhymes no-rhymes"
                     />
                     Acrostic</label
                   >
@@ -396,6 +414,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
+                    visible-when="with-rhymes"
                   >
                     <input
                       type="radio"
@@ -403,7 +422,7 @@
                       name="choose-poem-style"
                       value="villanelle"
                       custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
-                      required
+                      visible-when="with-rhymes"
                     />
                     Villanelle</label
                   >
@@ -411,6 +430,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
+                    visible-when="no-rhymes"
                   >
                     <input
                       type="radio"
@@ -418,7 +438,7 @@
                       name="choose-poem-style"
                       value="cinquain"
                       custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
-                      required
+                      visible-when="no-rhymes"
                     />
                     Cinquain</label
                   >
@@ -426,6 +446,7 @@
                   <label
                     class="more-space-in-between"
                     title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
+                    visible-when="with-rhymes no-rhymes"
                   >
                     <input
                       type="radio"
@@ -433,7 +454,7 @@
                       name="choose-poem-style"
                       value="epic"
                       custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
-                      required
+                      visible-when="with-rhymes no-rhymes"
                     />
                     Epic</label
                   >
@@ -444,12 +465,11 @@
                 <legend>Add poem topic</legend>
                 <textarea
                   id="poem-topic-box"
-                  placeholder="Please, be nice and clear, give enough details, & don’t repeat yourself."
                   autocomplete="off"
                   autofocus
                   cols="70%"
                   rows="4"
-                  title="Add personalised context to your Haiku poem."
+                  title="Please, be nice and clear, give enough details, & don’t repeat yourself."
                 ></textarea>
               </fieldset>
             </div>
@@ -457,12 +477,7 @@
             <div id="button-placeholder">
               <input type="submit" id="submit-button" />
             </div>
-            <div id="defaultValue-message" <!-- aria-hidden="true" -->
-              > *In the box where you are supposed to add your poem
-              expectations, no additional information was added, therefore this
-              poem was generated with the following default input (as an
-              example): "..."
-            </div>
+            <div id="defaultValue-message"></div>
           </form>
         </div>
       </main>

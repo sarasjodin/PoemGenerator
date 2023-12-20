@@ -60,12 +60,29 @@ function typeNextWord() {
   }
 }
 
+// Initialize contextValue
+let contextValue = "The poem should be short with only one row and speak about sport.";
+
+// Function to set and update contextValue
+function setContextValue() {
+  let poemTopicBox = document.getElementById("poem-topic-box");
+  
+  // Update contextValue if the text box value changes
+  poemTopicBox.addEventListener("input", function () {
+    contextValue = poemTopicBox.value.trim() !== "" ? poemTopicBox.value : "The poem should be short with only one row and speak about sport.";
+  });
+  
+  // Set the initial value of the text box
+  poemTopicBox.value = contextValue;
+}
+
 function collectFormData() {
   // Select the form element
   let form = document.getElementById("poem-form-element");
 
-  // Create an array to store the collected data
-  let formData = [];
+  // Create arrays to store the collected data (encoded and unencoded)
+  let encodedFormData = [];
+  let unencodedFormData = [];
 
   // Iterate through form elements
   for (let i = 0; i < form.elements.length; i++) {
@@ -77,23 +94,32 @@ function collectFormData() {
       case "checkbox":
         // Check if the radio button or checkbox is checked
         if (element.checked) {
-          // Add the custom-data attribute to the formData array
-          formData.push(element.getAttribute("custom-data"));
+          // Add the custom-data attribute to both arrays
+          encodedFormData.push(
+            encodeURIComponent(element.getAttribute("custom-data"))
+          );
+          unencodedFormData.push(element.getAttribute("custom-data"));
         }
         break;
       case "textarea":
       case "text":
         // Check if the textarea or text input has a value
         if (element.value.trim() !== "") {
-          // Add the text value to the formData array
-          formData.push(element.value);
+          // Add the text value to both arrays
+          encodedFormData.push(encodeURIComponent(element.value));
+          unencodedFormData.push(element.value);
         }
         break;
       case "select-one":
         // Check if the select element has a selected option
         if (element.selectedIndex !== -1) {
-          // Add the custom-data attribute to the formData array
-          formData.push(
+          // Add the custom-data attribute to both arrays
+          encodedFormData.push(
+            encodeURIComponent(
+              element.options[element.selectedIndex].getAttribute("custom-data")
+            )
+          );
+          unencodedFormData.push(
             element.options[element.selectedIndex].getAttribute("custom-data")
           );
         }
@@ -101,36 +127,64 @@ function collectFormData() {
     }
   }
 
-  // Convert the collected data to a single string
-  let jsonData = JSON.stringify([formData.join(" ")], null, 2).replace(
-    /\"/g,
-    "'"
-  );
+  // Convert the collected data to strings
+  let jsonData = encodedFormData.join(" ");
+  let unencodedData = unencodedFormData.join(" ");
+  let contextValue = document.getElementById("poem-topic-box").value;
+  // Set a default context value if the text box is empty
+  let context =
+    contextValue.trim() !== ""
+      ? contextValue
+      : "The poem should be short with only one row and speak about sport.";
 
-  // Add logs to trace the flow
-  console.log("Collected Form Data:", formData);
-  console.log("JSON Data:", jsonData);
+  // Update the content of the textarea dynamically
+  let poemTopicBox = document.getElementById("poem-topic-box");
+  if (poemTopicBox) {
+    // Set the placeholder based on the condition
+    poemTopicBox.placeholder =
+      context.trim() !== ""
+        ? `${context}`
+        : "Please, be nice and clear, give enough details, & don’t repeat yourself.";
+  }
 
-  // You can now use jsonData as needed (e.g., send it to the server)
-  console.log(jsonData);
+  return { jsonData, unencodedData, context };
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  setContextValue();
   poemContainer = document.querySelector("#poem-container");
   let submitButton = document.querySelector("#submit-button");
   let buttonPlaceholder = document.querySelector("#button-placeholder");
   let reloadButton;
   let defaultWaitingMessage;
+  let prompt;
 
   submitButton.addEventListener("click", async function (event) {
-    event.preventDefault(); // Prevent the default form submission behavior    //
-    console.log("Submit button clicked");
-    collectFormData(); // Add this line
-    // Hide the form if it exists
-    /* let poemFormElement = document.querySelector("#poem-form-element");
-    if (poemFormElement) {
-      poemFormElement.style.display = "none";
-    } */
+    event.preventDefault(); // Prevent the default form submission behavior
+    /* console.log("Submit button clicked"); */
+
+    // Retrieve the value of the text box
+    let contextValue = document.getElementById("poem-topic-box").value;
+
+    const { jsonData, unencodedData, context } = collectFormData();
+    /* console.log("jsonData:", jsonData);
+    console.log("unencodedData:", unencodedData); */
+
+    // Check if the value is empty, and set a default value if needed
+    contextValue.trim() !== ""
+      ? contextValue
+      : "The poem should be short with only one row and speak about sport.";
+
+    // Update the content of the div with the contextValue and unencodedData
+    let defaultValueMessage = document.getElementById("defaultValue-message");
+    if (defaultValueMessage) {
+      let finalContext =
+        contextValue.trim() !== ""
+          ? `You've requested a poem with the following criteria: "${unencodedData}"`
+          : `You've requested a poem with the following criteria: "${unencodedData} ${context}"`;
+
+      defaultValueMessage.innerHTML = finalContext;
+    }
 
     // Show the poem container
     poemContainer.style.display = "block";
@@ -153,11 +207,10 @@ document.addEventListener("DOMContentLoaded", function () {
       try {
         const response = await makeGetRequest(apiUrl, apiKey);
         defaultWaitingMessage.style.display = "none";
-        // Display generated poem
-        /* poemContainer.textContent = response; */
+
         // Display generated poem
         words = response.split(" "); // Split the poem into words
-        console.log(words);
+        /* console.log(words); */
         typeNextWord(); // Start typing words
         /* } */
       } catch (error) {
@@ -169,11 +222,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Example usage:
-    let prompt = "A short 2 row rhyme couplets about love";
-    let context = " and poem";
+    prompt = unencodedData;
+    /* console.log("prompt:", prompt); */
     let apiKey = "7166fo94tf124f43f80bab7387ed0a26";
 
-    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+    let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${encodeURIComponent(
+      context
+    )}&key=${apiKey}`;
 
     // Invoke the fetchData function
     fetchData(apiUrl, apiKey);
@@ -204,13 +259,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ensure reloadButton is defined before modifying its style
     if (reloadButton) {
       reloadButton.style.display = "block";
-      reloadButton.style.margin = "auto";  // Center horizontally
-  }
+      reloadButton.style.margin = "auto"; // Center horizontally
+    }
 
     // Use requestAnimationFrame to ensure proper timing for visibility toggle
     requestAnimationFrame(function () {
       defaultWaitingMessage.style.display = "block";
-      defaultWaitingMessage.style.margin = "auto";  // Center horizontally
+      defaultWaitingMessage.style.margin = "auto"; // Center horizontally
     });
   });
 });
