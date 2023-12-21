@@ -23,26 +23,30 @@
       <header>
         <div class="container">
           <div class="row">
-            <div class="col-4 d-flex flex-column align-items-center">
+            <div class="col-1"></div>
+            <div class="col-3 d-flex flex-column align-items-center">
               <img
                 src="src/images/logo_bot_sara.svg"
                 width="130px"
-                alt="A bot named Sara"
+                alt="A bot"
+                title='My name is "Sara Bot"'
               />
               <p id="introduction mt-8">My name is Sara Bot</p>
             </div>
-            <div class="col-8 d-flex align-items-center">
+            <div class="col-6 d-flex align-items-center">
               <h1>AI Poem<span class="typewriter" id="typewriter"></span></h1>
             </div>
+            <div class="col-1"></div>
           </div>
         </div>
       </header>
-      <main>
+      <div class="row justify-content-center">
+        <div class="col-10">
         <div id="poem-container">
           <form id="poem-form-element" action="">
             <div id="inner-form-element">
-              <fieldset>
-                <legend>Choose poem convention</legend>
+              <fieldset id="choose-poem-convention">
+                <legend title="Choose poem convention">Choose poem convention</legend>
                 <!-- Radio Button 1 -->
                 <label
                   class="more-space-in-between"
@@ -53,7 +57,7 @@
                     id="with-rhymes"
                     name="choose-poem-convention"
                     value="with-rhymes"
-                    custom-data="Please, create a poem with rhymes."
+                    custom-data="Please, help me to create a poem with rhymes."
                     required
                     checked
                   />
@@ -70,7 +74,7 @@
                     id="no-rhymes"
                     name="choose-poem-convention"
                     value="no-rhymes"
-                    custom-data="Please, create a poem without rhymes."
+                    custom-data="Please, help me to create a poem without rhymes."
                   />
                   No rhymes</label
                 >
@@ -78,20 +82,20 @@
                 <!-- Radio Button 3 -->
                 <label
                   class="more-space-in-between"
-                  title="This option does not give any input about the poem style."
+                  title="This option does not give any input about the poem convention or style when generating the poem."
                 >
                   <input
                     type="radio"
                     id="no-input"
                     name="choose-poem-convention"
                     value="no-input"
-                    custom-data="Please, create a poem."
+                    custom-data="Please, help me to create a poem."
                   />
                   No input</label
                 >
 
                 <!-- Radio Button 4 -->
-                <label
+                <!-- <label
                   class="more-space-in-between"
                   title="This option will generate a random rhyme style and / or poem style, but you could still add your poem topic input in the text box below, to personalise the generated poem."
                 >
@@ -103,10 +107,10 @@
                     custom-data="Please, create a random poem."
                   />
                   Random</label
-                >
+                > -->
               </fieldset>
-              <fieldset>
-                <legend>Choose poem rhyms</legend>
+              <fieldset id="choose-poem-rhymes" >
+                <legend title="Choose poem rhymes">Choose poem rhymes</legend>
                 <div>
                   <!-- Checkbox 1 -->
                   <label
@@ -200,8 +204,8 @@
                   >
                 </div>
               </fieldset>
-              <fieldset>
-                <legend>Choose poem style</legend>
+              <fieldset id="choose-poem-style" >
+                <legend title="Choose poem style">Choose poem style</legend>
                 <div>
                   <!-- Radio Button 5 -->
                   <label
@@ -348,18 +352,6 @@
                     />
                     moment of beauty</label
                   >
-
-                  <!-- Textbox 1 -->
-                  <input
-                    type="text"
-                    id="haiku-other-input"
-                    name="haiku-other-input-text-box"
-                    placeholder="or add personal topic"
-                    maxlength="30"
-                    rows="1"
-                    title="Add a personalised topic to your Haiku poem."
-                    visible-when="no-rhymes"
-                  />
                 </div>
                 <div>
                   <!-- Radio Button 13 -->
@@ -461,27 +453,27 @@
                 </div>
               </fieldset>
               <p id="poem-prompt-collection"></p>
-              <fieldset>
-                <legend>Add poem topic</legend>
+              <fieldset id="add-poem-topic">
+                <legend title="Add poem topic">Add poem topic</legend>
                 <textarea
                   id="poem-topic-box"
                   autocomplete="off"
                   autofocus
-                  cols="70%"
-                  rows="4"
+                  cols="100%"
+                  rows="5"
                   title="Please, be nice and clear, give enough details, & don’t repeat yourself."
                 ></textarea>
               </fieldset>
+              <div id="waiting-message" hidden>Please wait for your poem to come to life...</div>
             </div>
-            <div class="typewriter generated-poem" id="typewriter-poem"></div>
+            <div class="typewriter generated-poem" id="author-signature" hidden><span>Your AI Poem generator,</span><br /><span class="typewriter generated-poem" id="author-name" hidden><span>Sara Bot</span></div>
             <div id="button-placeholder">
-              <input type="submit" id="submit-button" value="Submit" />
+              <input type="submit" id="submit-button" value="Submit" title="Submit button" />
             </div>
-            <div id="defaultValue-message"></div>
+            <div id="default-value-message"></div>
           </form>
         </div>
-      </main>
-    </div>
+      </div>
     <footer>
       <div>
         Coded by

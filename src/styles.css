@@ -32,48 +32,39 @@ legend {
 }
 
 .more-space-in-between {
-  padding: 0 5px 0 0;
+  margin-left: 10px;
 }
 
 .labels {
   font-weight: 500;
   text-decoration: underline;
+  margin-left: 10px;
 }
 
 .hidden {
   display: none;
 }
 
-#haiku-other-input {
-  width: 147px;
-  height: 20px;
-}
-
 #app-container {
   margin: 15px auto;
   display: block;
   padding: 0 20px;
-  line-height: 2;
-  border-radius: 10px;
-  width: 40%;
   text-align: center;
   font-size: 0.9rem;
   height: auto;
 }
-
 #poem-container {
-  line-height: 2;
-  border-radius: 10px;
-  margin: auto;
+  border-radius: 12px;
+  margin: 15px auto;
+  display: block;
   height: auto;
-  /* height: 550px; */
+  width: auto;
   background-color: rgba(255, 255, 255, 0.4);
-  padding: 10px 20px;
+  padding: 30px 20px;
 }
 
 #poem-generator-container {
   padding: 0 20px;
-  line-height: 2;
   border-radius: 10px;
   width: auto;
   margin: 15px auto;
@@ -102,6 +93,7 @@ button,
 
 #reload-button {
   display: none;
+  margin-bottom: 25px;
 }
 
 button:hover,
@@ -109,44 +101,46 @@ button:hover,
   transform: scale(1.05);
 }
 
+#waiting-message {
+  padding: 25px;
+}
+
 #poem-topic-box {
   min-width: 25%;
-  max-width: 100%;
-  line-height: normal;
+  font-size: 0.9rem;
+}
+
+#inner-form-element {
+  font-size: 1rem;
+  text-align: left;
+  padding: 5px 25px 0;
+  margin: 10px 50px 0;
 }
 
 #typewriter {
-  line-height: 35px;
+  line-height: 15px;
   height: 42px;
   color: #45a2ff;
   font-size: 2.5rem;
   font-weight: 600;
 }
 
-/*
-input[type="radio"] {
-  appearance: none;
-  line-height: 1.8;
+#author-signature {
+  text-align: right;
+  padding: 0 25px 5px;
+  margin: 0 50px 30px;
+  font-size: 1rem;
+}
+#author-name {
+  font-style: oblique;
 }
 
-input[type="radio"]::before {*/
-/* A pseudo-element is created before the radio button */
-/*  content: "";*/
-/* The pseudo-element has a circular shape */
-/*  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;*/
-/* The pseudo-element has a background color and a border color */
-/*  background-color: rgb(255, 255, 255);
-  border: 2px solid #9dc0ef;
+#default-value-message {
+  display: flex;
+  font-size: small;
+  text-align: left;
+  padding: 0 40px;
 }
-
-input[type="radio"]:checked::before {*/
-/* When the radio button is checked, the background color and the border color are changed */
-/*  background-color: rgb(77, 146, 237);
-  border-color: #9dc0ef;
-}*/
 
 footer {
   display: flex;
@@ -154,15 +148,9 @@ footer {
   flex-direction: row;
   align-items: space-between;
   justify-content: center;
-  padding: 0 0 2rem 0;
+  padding: 0.7rem 0 2rem 0;
   font-size: 0.9rem;
 }
-
-/* footer a:hover {
-  transform: scale(1.05);
-  filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(190deg)
-    brightness(90%);
-} */
 
 footer a {
   display: inline-block;

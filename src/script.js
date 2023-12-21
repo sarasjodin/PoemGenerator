@@ -36,42 +36,38 @@ function typeNextChar() {
 
 typeNextChar();
 
-// Type writing functionality for words
-let words = []; // You need to set this array with words from your response
 let typewritingPoem = document.querySelector("#inner-form-element");
-let speed2 = 120;
-let delay2 = 3000;
-let pause2 = 500;
-let index2 = 0;
+function typeNextWord(poemText) {
+  // Set the content of typewritingPoem without the typewriter effect
+  typewritingPoem.innerHTML = poemText;
+}
 
-function typeNextWord() {
-  // If the index is less than the number of words
-  if (index2 < words.length) {
-    // Append the next word to the h1 element
-    typewritingPoem.innerHTML += words[index2] + " ";
-    // Increment the index
-    index2++;
-    // Set a timer to call this function again after the speed delay
-    setTimeout(typeNextWord, speed2);
-  } else {
-    // Reset the index
-    index2 = 0;
-    isTypeNextWordActive = false; // Set typeNextWord as inactive
-  }
+// Add the formatWord function
+function formatWord(word) {
+  // Replace newline characters with <br> tags
+
+  return word
+    .replace(/\r?\n\/r/g, " ")
+    .replace(/,/g, "<br>")
+    .replace(/\s+/g, " ");
 }
 
 // Initialize contextValue
-let contextValue = "The poem should be short with only one row and speak about sport.";
+let contextValue =
+  "Compose a short, beautiful poem in British English about a random subject. Create an engaging title. Make sure to enclose the entire title within h3 tags. Arrange the lines by breaking only after commas. Additionally, structure each stanza into paragraphs enclosed within p tags. Avoid creating lines with only a single word or multiple consecutive line breaks. Your creativity as my personal Poem Writer will bring this poem to life.";
 
 // Function to set and update contextValue
 function setContextValue() {
   let poemTopicBox = document.getElementById("poem-topic-box");
-  
+
   // Update contextValue if the text box value changes
   poemTopicBox.addEventListener("input", function () {
-    contextValue = poemTopicBox.value.trim() !== "" ? poemTopicBox.value : "The poem should be short with only one row and speak about sport.";
+    contextValue =
+      poemTopicBox.value.trim() !== ""
+        ? poemTopicBox.value
+        : "The poem should be short with only one row and speak about sport.";
   });
-  
+
   // Set the initial value of the text box
   poemTopicBox.value = contextValue;
 }
@@ -155,20 +151,33 @@ document.addEventListener("DOMContentLoaded", function () {
   poemContainer = document.querySelector("#poem-container");
   let submitButton = document.querySelector("#submit-button");
   let buttonPlaceholder = document.querySelector("#button-placeholder");
+  let choosePoemConvention = document.querySelector("#choose-poem-convention");
+  let choosePoemRhymes = document.querySelector("#choose-poem-rhymes");
+  let choosePoemStyle = document.querySelector("#choose-poem-style");
+  let addPoemTopic = document.querySelector("#add-poem-topic");
+  let innerFormElement = document.querySelector("#inner-form-element");
   let reloadButton;
-  let defaultWaitingMessage;
+  let waitingMessage = document.querySelector("#waiting-message");
   let prompt;
 
   submitButton.addEventListener("click", async function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
-    /* console.log("Submit button clicked"); */
+
+    // To hide the button and other elements
+    submitButton.setAttribute("hidden", true);
+    choosePoemConvention.setAttribute("hidden", true);
+    choosePoemRhymes.setAttribute("hidden", true);
+    choosePoemStyle.setAttribute("hidden", true);
+    addPoemTopic.setAttribute("hidden", true);
+    // To show the message
+    waitingMessage.removeAttribute("hidden");
 
     // Retrieve the value of the text box
     let contextValue = document.getElementById("poem-topic-box").value;
 
     const { jsonData, unencodedData, context } = collectFormData();
-    /* console.log("jsonData:", jsonData);
-    console.log("unencodedData:", unencodedData); */
+    console.log("jsonData:", jsonData);
+    console.log("unencodedData:", unencodedData);
 
     // Check if the value is empty, and set a default value if needed
     contextValue.trim() !== ""
@@ -176,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
       : "The poem should be short with only one row and speak about sport.";
 
     // Update the content of the div with the contextValue and unencodedData
-    let defaultValueMessage = document.getElementById("defaultValue-message");
+    let defaultValueMessage = document.getElementById("default-value-message");
     if (defaultValueMessage) {
       let finalContext =
         contextValue.trim() !== ""
@@ -206,18 +215,33 @@ document.addEventListener("DOMContentLoaded", function () {
     async function fetchData(apiUrl, apiKey) {
       try {
         const response = await makeGetRequest(apiUrl, apiKey);
-        defaultWaitingMessage.style.display = "none";
+        waitingMessage.style.display = "none";
 
         // Display generated poem
         words = response.split(" "); // Split the poem into words
-        /* console.log(words); */
-        typeNextWord(); // Start typing words
-        /* } */
+        typewritingPoem.innerHTML = "";
+        // Start typing words
+        console.log(words);
+
+        // Start typing words
+        typeNextWord(words.map(formatWord).join(" "));
+
+        showAuthorSignature();
       } catch (error) {
         console.error("Error fetching data:", error);
         alert(
           "I have some problems generating the poem. Please, check your internet connection. If the problem persists, contact sarasjodin.com. Best regards Sara, your personal Poem Bot."
         );
+      }
+    }
+
+    function showAuthorSignature() {
+      // Show the author signature when the poem has been typed
+      let authorSignature = document.getElementById("author-signature");
+      let authorName = document.getElementById("author-name");
+      if (authorSignature) {
+        authorSignature.removeAttribute("hidden");
+        authorName.removeAttribute("hidden");
       }
     }
 
@@ -232,16 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Invoke the fetchData function
     fetchData(apiUrl, apiKey);
-
-    // Create defaultWaitingMessage dynamically
-    defaultWaitingMessage = document.createElement("div");
-    defaultWaitingMessage.id = "waiting-message";
-    defaultWaitingMessage.innerText = "Please wait for your poem...";
-    defaultWaitingMessage.style.display = "none";
-
-    // Append the defaultWaitingMessage before the reloadButton
-    document.getElementById("waiting-message");
-    poemContainer.parentElement.appendChild(defaultWaitingMessage);
 
     reloadButton = document.createElement("button");
     reloadButton.id = "reload-button";
@@ -260,12 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (reloadButton) {
       reloadButton.style.display = "block";
       reloadButton.style.margin = "auto"; // Center horizontally
-    }
-
-    // Use requestAnimationFrame to ensure proper timing for visibility toggle
-    requestAnimationFrame(function () {
-      defaultWaitingMessage.style.display = "block";
-      defaultWaitingMessage.style.margin = "auto"; // Center horizontally
-    });
+    } /* ); */
   });
 });
