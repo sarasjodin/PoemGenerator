@@ -23,6 +23,10 @@ h1 {
   font-weight: 600;
 }
 
+.ai-poem-h1, #typewriter {
+  font-size: inherit; /* Inherit the font size from the parent h1 element */
+}
+
 h3 {
   font-size: 1.5rem;
 }
@@ -209,23 +213,23 @@ footer .netlify {
   #inner-form-element {
     margin: 0;
     padding: 0;
-    }
-    #poem-container {
-      margin: 0 auto;
-      display: block;
-      height: auto;
-      width: auto;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 25px 0;
-      text-align: center;
-    }
-    #default-value-message {
-      column-count: 1; /* Set the initial number of columns */
-      column-gap: 20px; /* Set the gap between columns */
-      font-size: small;
-      text-align: left;
-      padding: 15px 40px;
-    }
+  }
+  #poem-container {
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 25px 0;
+    text-align: center;
+  }
+  #default-value-message {
+    column-count: 1; /* Set the initial number of columns */
+    column-gap: 20px; /* Set the gap between columns */
+    font-size: small;
+    text-align: left;
+    padding: 15px 40px;
+  }
 }
 
 @media screen and (min-width: 600px) {
