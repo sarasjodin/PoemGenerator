@@ -54,7 +54,7 @@ function formatWord(word) {
 
 // Initialize contextValue
 let contextValue =
-  "Compose a short, beautiful poem in British English about a random subject. Create an engaging title. Make sure to enclose the entire title within h3 tags. Arrange the lines by breaking only after commas. Additionally, structure each stanza into paragraphs enclosed within p tags. Avoid creating lines with only a single word or multiple consecutive line breaks. Your creativity as my personal Poem Writer will bring this poem to life.";
+  'Compose a very short couplets poem in British English about a X-box christmas gift from parents to daughter. Do not reveal "X-box" in the poem. Create an engaging title. Make sure to enclose the entire title within h3 tags. Arrange the lines by breaking only after commas and punctuations. Additionally, structure each stanza into paragraphs enclosed within p tags. Avoid creating lines with only a single word or multiple consecutive line breaks. Your creativity as my personal Poem Writer will bring this poem to life.';
 
 // Function to set and update contextValue
 function setContextValue() {
@@ -189,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (defaultValueMessage) {
       let finalContext =
         contextValue.trim() !== ""
-          ? `You've requested a poem with the following criteria: "${unencodedData}"`
-          : `You've requested a poem with the following criteria: "${unencodedData} ${context}"`;
+          ? `<h4>Your poem criteria</h4> "${unencodedData}"`
+          : `<h4>Your poem criteria</h4> "${unencodedData} ${context}"`;
 
       defaultValueMessage.innerHTML = finalContext;
     }
