@@ -54,7 +54,7 @@ function formatWord(word) {
 
 // Initialize contextValue
 let contextValue =
-  'Compose a very short couplets poem in British English about a X-box christmas gift from parents to daughter. Do not reveal "X-box" in the poem. Create an engaging title. Make sure to enclose the entire title within h3 tags. Arrange the lines by breaking only after commas and punctuations. Additionally, structure each stanza into paragraphs enclosed within p tags. Avoid creating lines with only a single word or multiple consecutive line breaks. Your creativity as my personal Poem Writer will bring this poem to life.';
+  'Compose a very short couplets poem in British English about a X-box Christmas gift from parents to daughter. Do not reveal "X-box" in the poem. Create an engaging title. Make sure to enclose the entire title within h3 tags. Arrange the lines by breaking only after commas and punctuations. Additionally, structure each stanza into paragraphs enclosed within p tags. Avoid creating lines with only a single word or multiple consecutive line breaks. Your creativity as my personal Poem Writer will bring this poem to life.';
 
 // Function to set and update contextValue
 function setContextValue() {
