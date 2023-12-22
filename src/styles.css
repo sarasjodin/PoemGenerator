@@ -42,11 +42,16 @@ legend {
 }
 
 fieldset {
-  display: block; /* Ensure each fieldset takes up the full width */
-  margin: 10px auto; /* Add margin between fieldsets and center them horizontally */
+  display: block;
+  margin: 10px auto;
   padding: 5px 25px 0;
   font-size: 1rem;
-  text-align: left; /* Align text within each fieldset to the left */
+  text-align: left;
+}
+
+fieldset:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .more-space-in-between {
@@ -128,15 +133,12 @@ button:hover,
   width: 100%;
   height: 100%;
   box-sizing: border-box; /* This ensures that padding and borders are included in the total width and height */
-  /* resize: none; */ /* Optional: This disables the textarea resize handle */
   margin-bottom: 10px;
-  /*   text-align: center;
- */
 }
 
 #inner-form-element {
-  display: inline-block; /* Make the wrapper behave like an inline element */
-  text-align: left; /* Align text within the wrapper to the left */
+  display: inline-block;
+  text-align: left;
   font-size: 1rem;
   padding: 5px 25px 0;
   margin: 10px 50px 0;
@@ -166,8 +168,8 @@ h4 {
 }
 
 #default-value-message {
-  column-count: 1; /* Set the initial number of columns */
-  column-gap: 20px; /* Set the gap between columns */
+  column-count: 1;
+  column-gap: 20px;
   font-size: small;
   text-align: left;
   padding: 25px 40px;
@@ -210,7 +212,7 @@ footer .netlify {
 
 @media screen and (min-width: 200px) {
   #default-value-message {
-    column-count: 1; /* Set the number of columns for larger devices */
+    column-count: 1;
   }
   #inner-form-element {
     margin: 0;
@@ -226,8 +228,8 @@ footer .netlify {
     text-align: center;
   }
   #default-value-message {
-    column-count: 1; /* Set the initial number of columns */
-    column-gap: 20px; /* Set the gap between columns */
+    column-count: 1;
+    column-gap: 20px;
     font-size: small;
     text-align: left;
     padding: 15px 40px;

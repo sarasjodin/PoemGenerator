@@ -85,7 +85,7 @@
                     >
 
                     <!-- Radio Button 3 -->
-                    <label
+                    <!-- <label
                       class="more-space-in-between"
                       title="This option does not give any input about the poem convention or style when generating the poem."
                     >
@@ -97,7 +97,7 @@
                         custom-data="Please, help me to create a poem."
                       />
                       No input</label
-                    >
+                    > -->
 
                     <!-- Radio Button 4 -->
                     <!-- <label
@@ -124,7 +124,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="correct-rhyme"
+                          id="correct-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="correct-rhyme"
                           custom-data="Use correct rhymes and"
@@ -139,7 +139,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="slanted-rhyme"
+                          id="slanted-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="slanted-rhyme"
                           custom-data="Allow slanted rhymes and"
@@ -154,7 +154,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="eye-rhyme"
+                          id="eye-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="eye-rhyme"
                           custom-data="Allow eye rhymes and"
@@ -170,7 +170,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="assonant-rhyme"
+                          id="assonant-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="assonant-rhyme"
                           custom-data="Allow assonant rhymes and"
@@ -185,7 +185,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="consonant-rhyme"
+                          id="consonant-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="consonant-rhyme"
                           custom-data="Allow consonant rhymes and"
@@ -200,7 +200,7 @@
                       >
                         <input
                           type="checkbox"
-                          id="internal-rhyme"
+                          id="internal-rhyme choose-poem-rhymes-check-boxes"
                           name="choose-poem-rhymes"
                           value="inernal-rhyme"
                           custom-data="Allow inernal rhymes and"
@@ -220,7 +220,7 @@
                       >
                         <input
                           type="radio"
-                          id="open-form"
+                          id="open-form choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="open-form"
                           custom-data="Utilise the open form poem style, which does not have any specific instructions or constraints on the poem style. This term implies a lack of specific structure or rules, allowing for greater freedom and creativity on the part of the poet..."
@@ -236,7 +236,7 @@
                       >
                         <input
                           type="radio"
-                          id="no-style"
+                          id="no-style choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="no-style"
                           custom-data="Utilise the no style poem style, which does not have a regular meter or rhyme scheme, but it also does not look like a free verse poem. It uses unconventional punctuation, spacing, and line breaks."
@@ -252,13 +252,111 @@
                       >
                         <input
                           type="radio"
-                          id="free-verse"
+                          id="free-verse choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="free-verse"
                           custom-data="Utilise the free-verse poem style, which does not follow any rules of rhyme, meter, or form. Free verse poems can have any number of lines, stanzas, or syllables, and can express any topic or emotion."
                           visible-when="no-rhymes"
                         />
                         Free verse</label
+                      >
+                    </div>
+                    <div>
+                      <!-- Radio Button 13 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
+                        visible-when="with-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="limerick choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="limerick"
+                          custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
+                          visible-when="with-rhymes"
+                        />
+                        Limerick</label
+                      >
+                      <!-- Radio Button 14 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
+                        visible-when="with-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="ballad choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="ballad"
+                          custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
+                          visible-when="with-rhymes"
+                        />
+                        Ballad</label
+                      >
+                      <!-- Radio Button 15 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
+                        visible-when="with-rhymes no-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="acrostic choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="Acrostic"
+                          custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
+                          visible-when="with-rhymes no-rhymes"
+                        />
+                        Acrostic</label
+                      >
+                      <!-- Radio Button 16 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
+                        visible-when="with-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="villanelle choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="villanelle"
+                          custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
+                          visible-when="with-rhymes"
+                        />
+                        Villanelle</label
+                      >
+                      <!-- Radio Button 17 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
+                        visible-when="no-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="cinquain choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="cinquain"
+                          custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
+                          visible-when="no-rhymes"
+                        />
+                        Cinquain</label
+                      >
+                      <!-- Radio Button 18 -->
+                      <label
+                        class="more-space-in-between"
+                        title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
+                        visible-when="with-rhymes no-rhymes"
+                      >
+                        <input
+                          type="radio"
+                          id="epic choose-poem-styles-radios"
+                          name="choose-poem-style"
+                          value="epic"
+                          custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
+                          visible-when="with-rhymes no-rhymes"
+                        />
+                        Epic</label
                       >
                     </div>
                     <div>
@@ -277,7 +375,7 @@
                       >
                         <input
                           type="radio"
-                          id="haiku-nature"
+                          id="haiku-nature choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="haiku-nature"
                           custom-data="Utilise the haiku poem style about nature, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of nature and emotions, that depicts the essence of a specific moment in time."
@@ -293,7 +391,7 @@
                       >
                         <input
                           type="radio"
-                          id="haiku-season"
+                          id="haiku-season choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="haiku-season"
                           custom-data="Utilise the haiku poem style about the season, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on the careful observation of the season and emotions, that depicts the essence of a specific moment in time."
@@ -304,13 +402,12 @@
                       <!-- Radio Button 10 -->
                       <label
                         class="more-space-in-between"
-                        for="haiku-moment-of-beauty"
                         title="This option will generate a haiku poem about a moment of beauty."
                         visible-when="no-rhymes"
                       >
                         <input
                           type="radio"
-                          id="haiku-moment-of-beauty"
+                          id="haiku-moment-of-beauty choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="haiku-moment-of-beauty"
                           custom-data="Utilise the haiku poem style about the moment of beauty, which is a short poetic form that consists of three lines with 17 syllables arranged in a 5-7-5 pattern. It should be based on a careful observation of a moment of beauty and emotions, that depicts the essence of a specific moment in time."
@@ -335,7 +432,7 @@
                       >
                         <input
                           type="radio"
-                          id="sonnet-petrarchan"
+                          id="sonnet-petrarchan choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="sonnet-petrarchan"
                           custom-data="Utilise the sonnet petrarchan poem style that has 14 lines, divided into two parts: an octave (the first eight lines) and a sestet (the last six lines). The octave usually presents a problem or a question, and the sestet provides a solution or an answer. The rhyme scheme of the octave is ABBA ABBA, and the rhyme scheme of the sestet can vary, but the most common are CDE CDE or CDC CDC."
@@ -351,111 +448,13 @@
                       >
                         <input
                           type="radio"
-                          id="sonnet-shakespearean"
+                          id="sonnet-shakespearean choose-poem-styles-radios"
                           name="choose-poem-style"
                           value="sonnet-shakespearean"
                           custom-data="Utilise the sonnet shakespearean poem style that has 14 lines, divided into three quatrains and a couplet. The rhyme scheme is ABAB CDCD EFEF GG, and the meter is iambic pentameter, which means each line has 10 syllables with alternating stress. The Shakespearean sonnet usually expresses a single theme or idea, often related to love, beauty, or mortality. The first 12 lines present a problem or a question, and the last two lines provide a resolution or an answer."
                           visible-when="with-rhymes"
                         />
                         Shakespearean</label
-                      >
-                    </div>
-                    <div>
-                      <!-- Radio Button 13 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
-                        visible-when="with-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="limerick"
-                          name="choose-poem-style"
-                          value="limerick"
-                          custom-data="Utilise the limerick poem style that will generate a humorous poem that consists of five lines, with a rhyme scheme of AABBA and a meter of three stressed syllables in the first, second, and fifth lines, and two stressed syllables in the third and fourth lines."
-                          visible-when="with-rhymes"
-                        />
-                        Limerick</label
-                      >
-                      <!-- Radio Button 14 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
-                        visible-when="with-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="ballad"
-                          name="choose-poem-style"
-                          value="ballad"
-                          custom-data="Utilise the ballad poem style that will generate a narrative poem that tells a story, often in a musical or lyrical way. Ballads usually have a rhyme scheme of ABAB or ABCB and a meter of four or three stressed syllables per line."
-                          visible-when="with-rhymes"
-                        />
-                        Ballad</label
-                      >
-                      <!-- Radio Button 15 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
-                        visible-when="with-rhymes no-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="acrostic"
-                          name="choose-poem-style"
-                          value="Acrostic"
-                          custom-data="Utilise the acrostic poem style that will generate a type of poem that spells out a word or phrase using the first letter of each line. The lines can be full sentences or single words, and the word or phrase can be the title or a hidden message."
-                          visible-when="with-rhymes no-rhymes"
-                        />
-                        Acrostic</label
-                      >
-                      <!-- Radio Button 16 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
-                        visible-when="with-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="villanelle"
-                          name="choose-poem-style"
-                          value="villanelle"
-                          custom-data="Utilise the villanelle poem style that will generate a 19-line poem that consists of five tercets (three-line stanzas) and a final quatrain (four-line stanza), with two repeating lines throughout the poem."
-                          visible-when="with-rhymes"
-                        />
-                        Villanelle</label
-                      >
-                      <!-- Radio Button 17 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
-                        visible-when="no-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="cinquain"
-                          name="choose-poem-style"
-                          value="cinquain"
-                          custom-data="Utilise the cinquain poem style that will generate a five-line poem that follows a syllable pattern of 2-4-6-8-2. Cinquains can describe a person, place, thing, or idea, and can have different variations of form and rhyme."
-                          visible-when="no-rhymes"
-                        />
-                        Cinquain</label
-                      >
-                      <!-- Radio Button 18 -->
-                      <label
-                        class="more-space-in-between"
-                        title="This option will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
-                        visible-when="with-rhymes no-rhymes"
-                      >
-                        <input
-                          type="radio"
-                          id="epic"
-                          name="choose-poem-style"
-                          value="epic"
-                          custom-data="Utilise the epic poem style that will generate a long narrative poem that tells the adventures of a hero, often involving mythology, history, or legend. Epics usually have a formal style, a grand scope, and a serious tone."
-                          visible-when="with-rhymes no-rhymes"
-                        />
-                        Epic</label
                       >
                     </div>
                   </fieldset>

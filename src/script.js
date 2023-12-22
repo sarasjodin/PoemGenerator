@@ -160,6 +160,51 @@ document.addEventListener("DOMContentLoaded", function () {
   let waitingMessage = document.querySelector("#waiting-message");
   let prompt;
 
+  var withRhymesRadioButton = document.getElementById('with-rhymes');
+  var noRhymesRadioButton = document.getElementById('no-rhymes');
+/*   var noInputRadioButton = document.getElementById('no-input');
+ */  var choosePoemRhymesFieldset = document.getElementById('choose-poem-rhymes');
+  var choosePoemStylesFieldset = document.getElementById('choose-poem-styles');
+
+  function toggleFieldsets(isVisible) {
+    if (choosePoemRhymesFieldset) {
+      choosePoemRhymesFieldset.style.display = isVisible ? 'block' : 'none';
+
+      // Reset any checkboxes within the Choose Poem Rhymes fieldset
+      Array.from(choosePoemRhymesFieldset.querySelectorAll('input[type="checkbox"]')).forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+    }
+
+    if (choosePoemStylesFieldset) {
+      choosePoemStylesFieldset.style.display = isVisible ? 'block' : 'none';
+
+      // Reset any radio buttons within the Choose Poem Styles fieldset
+      Array.from(choosePoemStylesFieldset.querySelectorAll('input[type="radio"]')).forEach(function(radio) {
+        radio.checked = false;
+      });
+    }
+  }
+
+  function updateVisibility() {
+    var isVisible = withRhymesRadioButton.checked || !noRhymesRadioButton.checked;
+
+    // Toggle visibility and reset selections
+    toggleFieldsets(isVisible);
+  }
+
+  withRhymesRadioButton.addEventListener('change', updateVisibility);
+  noRhymesRadioButton.addEventListener('change', updateVisibility);
+  /* noInputRadioButton.addEventListener('change', function() {
+    if (noInputRadioButton.checked) {
+      // Hide and reset both fieldsets and their checkboxes/radio buttons
+      toggleFieldsets(false);
+    }
+  }); */
+
+  // Initial visibility update
+  updateVisibility();
+
   submitButton.addEventListener("click", async function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
